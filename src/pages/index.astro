@@ -1,0 +1,374 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const faqs = [
+  {
+    question: "How Much Does a Dynamics 365 Finance Implementation Cost?",
+    answer: "Licensing is the smaller variable. Implementation is a separate, one-time investment shaped by scope, data migration, integrations, and training. AXIO Core Financials removes a large share of variability by starting from a pre-configured system rather than a blank one."
+  },
+  {
+    question: "How long does modernization take?",
+    answer: "With AXIO Core Financials, deployment is up to 50% faster than traditional Dynamics 365 Finance projects, with core financials deployed in as few as 6 months."
+  },
+  {
+    question: "We Run Dynamics AX. Do We Have to Move?",
+    answer: "Dynamics AX 2009 and 2012 are on countdown clocks running on infrastructure past end of life. Moving to Dynamics 365 Finance eliminates on-premises hardware and customized tech debt while securing cloud support."
+  },
+  {
+    question: "How Does AXIO Reduce Implementation Risk?",
+    answer: "AXIO starts with 40+ pre-built processes, data migration accelerators, and industry configurations drawn from thousands of deployments, boosting success rates to 95%."
+  },
+  {
+    question: "Can Dynamics 365 Finance Support Acquisitions and Multi-Entity Reporting?",
+    answer: "Yes. D365 Finance consolidates multiple legal entities, currencies, and acquired companies on one chart of accounts with in-system intercompany eliminations."
+  },
+  {
+    question: "Why Does AI Readiness Depend on ERP Modernization?",
+    answer: "AI models pointed at fragmented, legacy data produce un-trustworthy results. D365 Finance acts as the clean, real-time system of record required for Copilot and Fabric analytics."
+  }
+];
+
+const stats = [
+  { value: "91%", label: "Of organizations need four or more days to close the month (Velosio ERP Modernization Study, 2026)" },
+  { value: "11+ hrs", label: "Lost per week to manual reconciliation by 68% of finance and operations teams" },
+  { value: "30x", label: "Microsoft Inner Circle winner, the top 1% of partners worldwide" }
+];
+
+const problemStats = [
+  { value: "68%", text: "Lose 11 or more hours per week to manual reconciliation, spreadsheet maintenance, and workarounds." },
+  { value: "96%", text: "Experience recurring delays on high-stakes decisions because data is unavailable, inconsistent, or manually assembled." },
+  { value: "80%", text: "Say their current ERP is at least somewhat limiting their ability to achieve better operational outcomes." },
+  { value: "91%", text: "Of organizations take four or more calendar days to complete the monthly financial close." }
+];
+
+const trustedBrands = [
+  "IRRIMAX", "SAUNDERS BROTHERS", "KIDDER MATTHEWS", "RUDOLPHE LIBBE", "FINDLAY VINYL", "CABINET DISCOUNTERS"
+];
+
+const demoAgendaItems = [
+  { title: "AI-POWERED FINANCIAL MANAGEMENT", desc: "Log in as your controller, your operations lead, your CFO. The general ledger, sub-ledgers, and operational data sit in one system, and every number on screen drills to the source transaction behind it." },
+  { title: "AUTONOMOUS RECONCILIATION", desc: "Watch bank and sub-ledger reconciliation, invoice matching, and exception handling run as automated processes rather than a monthly spreadsheet rebuild." },
+  { title: "MULTI-ENTITY CONSOLIDATION", desc: "Multiple legal entities, currencies, and acquired companies consolidated on one chart of accounts with intercompany eliminations handled in-system." },
+  { title: "FINANCIAL PLANNING & FORECASTING", desc: "86% of leaders say they are confident in their forecasts while 82% live with variance of ±10% or more. See budgeting, planning, and AI-assisted forecasting built on transaction-level data." },
+  { title: "CASH FLOW INTELLIGENCE", desc: "Cash-flow surprises are the number one consequence of forecast variance for 55% of organizations. See cash position, customer payment predictions, and AI-assisted collections working against live receivables." },
+  { title: "COMPLIANCE & AUDIT MANAGEMENT", desc: "Only 2% of organizations say their system produces audit-ready evidence. See embedded approvals, segregation of duties, traceability, and global regulatory reporting." },
+  { title: "COPILOT AT WORK", desc: "Copilot retrieving documents, explaining variances, drafting narratives, and answering questions inside the workflows your team already runs." },
+  { title: "MICROSOFT FABRIC INTEGRATION", desc: "Finance and operational data landing in a governed analytics foundation, so Power BI dashboards, AI models, and executive reporting draw from one system of truth." }
+];
+
+const aiStats = [
+  { value: "66%", text: "Are actively deploying or piloting AI across finance and operations today." },
+  { value: "58%", text: "Say data fragmentation across disconnected systems is a significant or critical barrier to AI adoption." },
+  { value: "6%", text: "Say their data is clean, unified, and AI-ready, leaving 94% with foundation work still ahead." },
+  { value: "3x", text: "Microsoft ERP users are three times more likely to have clean, unified, AI-ready data than users of other ERP platforms." }
+];
+
+const migrationPaths = [
+  { title: "AX 2009 TO D365 FINANCE", desc: "Unsupported, heavily customized, and often keeping paper in the process. Sutphen ran AX 2009 with 50+ customizations before moving to Dynamics 365 Finance with AXIO." },
+  { title: "AX 2012 TO THE CLOUD", desc: "Nelson Brothers eliminated the on-premises hardware required to run AX 2012 and moved to Dynamics 365 Finance and Supply Chain Management." },
+  { title: "GP TO D365 FINANCE", desc: "When entity count, reporting demands, or transaction volume outgrow GP, Finance is the destination rather than a lateral move." },
+  { title: "ON-PREM ERP TO CLOUD", desc: "Servers, VPNs, and version lock are the visible cost. The larger one is the integration layer holding it together." }
+];
+
+const industries = [
+  { title: "MANUFACTURING", desc: "Legacy AX estates carrying a decade of customization. Sutphen achieved an 81% decrease in monthly inventory posting time and bills of material exploded in 15 minutes instead of a full day." },
+  { title: "DISTRIBUTION & SUPPLY CHAIN", desc: "Forecast variance that surfaces as cash surprises. Nelson Brothers eliminated on-premises hardware entirely and automated inventory management." },
+  { title: "PROSERV & PROJECT-BASED", desc: "Project profitability calculated after the fact. BGSF now bills traditional staffing, flat-fee consulting, independent contractors, and W2 employees through one system." },
+  { title: "FIELD SERVICE", desc: "Work orders entered by hand at volume. City Facility Management reached 100% ROI on services investment within two months and grew customer base 34% inside a year." }
+];
+
+const axioStats = [
+  { value: "67%", label: "Less cost than typical Dynamics 365 Finance projects" },
+  { value: "50%", label: "Faster deployment than typical Finance projects" },
+  { value: "95%", label: "Implementation success rate, against a 68% industry average" },
+  { value: "30%+", label: "Reduction in total cost of ownership over the product lifecycle" }
+];
+---
+
+<BaseLayout
+  title="Dynamics 365 Finance Partner | Improved365 & AXIO Core"
+  description="Microsoft US Partner of the Year & 30x Inner Circle Partner. Scale your enterprise with Microsoft Dynamics 365 Finance and AXIO Core Financials."
+  canonical="https://improved365.com"
+  type="home"
+  faqs={faqs}
+>
+  <!-- Hero Section -->
+  <section id="d365-finance" class="bg-slate-950 text-white py-20 md:py-28 border-b border-slate-800 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-slate-950 pointer-events-none"></div>
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text Column -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 bg-blue-900/60 border border-blue-500/30 text-blue-300 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 uppercase tracking-wider">
+            🏆 MICROSOFT US PARTNER OF THE YEAR — 30x MICROSOFT INNER CIRCLE
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+            THE DYNAMICS 365 FINANCE PARTNER <span class="text-blue-500">PROVEN AT SCALE</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-8">
+            Your ERP should not be the reason the close takes a week, forecasts miss by double digits, audit prep eats a month, or your AI initiative stalls before it returns anything. Velosio implements Microsoft Dynamics 365 Finance with AXIO Core Financials: Powered by AI, for organizations whose complexity has outgrown the system underneath it.
+          </p>
+
+          <!-- Top Stats Banner -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-slate-800 pt-6">
+            {stats.map((stat) => (
+              <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
+                <span class="block text-2xl font-extrabold text-blue-400">{stat.value}</span>
+                <span class="text-xs text-slate-400 leading-snug block mt-1">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div id="demo-form" class="lg:col-span-5">
+          <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl relative">
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">LIVE, PERSONALIZED SESSION</span>
+            <h2 class="text-2xl font-extrabold text-white mb-2">SCHEDULE YOUR DEMO</h2>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+              A personalized walkthrough of Dynamics 365 Finance built around your industry, your systems, and your questions. No obligation.
+            </p>
+
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for scheduling a demo. A Dynamics 365 architect will reach out shortly.');">
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-medium text-slate-300 mb-1">First name*</label>
+                  <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium text-slate-300 mb-1">Last name*</label>
+                  <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Email*</label>
+                <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Company name*</label>
+                <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Job title*</label>
+                <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm py-3 px-6 rounded-xl shadow-lg transition-all"
+              >
+                REQUEST DEMO NOW
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Logos Section -->
+  <section class="py-10 bg-slate-900 border-b border-slate-800">
+    <div class="max-w-screen-xl mx-auto px-4 text-center">
+      <p class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-6">TRUSTED BY GROWTH STAGE AND MID-MARKET LEADERS</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-75">
+        {trustedBrands.map((brand) => (
+          <span class="text-slate-300 font-extrabold text-sm tracking-wider uppercase bg-slate-800/50 px-4 py-2 rounded-md border border-slate-700/50">{brand}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem Section -->
+  <section id="the-problem" class="py-20 bg-white border-b border-gray-100">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="max-w-3xl mb-12">
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">THE PROBLEM</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">
+          THE OPERATIONAL TAX OF A PRE-MODERNIZED ERP.
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-base mb-4">
+          Something usually forces this search: an auditor asking for controls the system cannot prove. An acquisition that stalled on consolidated reporting. A board asking for a real-time view that takes four days to assemble. A controller who reconciles the books from memory, and who is leaving. The weakness was always there; an outside party just made it visible.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Underneath the forcing event is the same operating model. Skilled people act as human middleware between sub-ledgers, spreadsheets, and an aging ERP, so the business grows only as fast as it can hire, and leaders decide on last week's numbers. Velosio's 2026 study of 151 U.S. ERP decision-makers put a number on what that costs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {problemStats.map((item) => (
+          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between">
+            <span class="text-4xl font-extrabold text-blue-600 mb-4 block">{item.value}</span>
+            <p class="text-slate-700 text-sm leading-relaxed">{item.text}</p>
+            <span class="text-[10px] uppercase tracking-wider text-slate-400 mt-4 block font-semibold">Velosio ERP Modernization Study, 2026</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Agenda Section -->
+  <section id="demo-agenda" class="py-20 bg-slate-900 text-white border-b border-slate-800">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-blue-400 font-bold text-xs tracking-widest uppercase block mb-2">DEMO AGENDA</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+          WHAT YOUR DEMO WILL ACTUALLY COVER
+        </h2>
+        <p class="text-slate-400 text-base mt-4">
+          This is the arc of the live session you are scheduling, led by a Velosio solution architect and tailored to your entity structure, your close calendar, and your questions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {demoAgendaItems.map((item, idx) => (
+          <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold text-blue-400 bg-blue-950 px-2.5 py-1 rounded-md mb-4 inline-block">0{idx + 1}</span>
+              <h3 class="text-sm font-bold text-white mb-2 uppercase tracking-wide">{item.title}</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Readiness Section -->
+  <section id="ai-readiness" class="py-20 bg-white border-b border-gray-100">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">THE PROBLEM</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+            WHY AI STRATEGIES FAIL IN FINANCE
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Two-thirds of organizations are already piloting or deploying AI in finance and operations. Only 6% say their data is clean, unified, and AI-ready. That gap is the whole story.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+            Dynamics 365 Finance is not just the replacement ERP. It is the governed, real-time system of record that Copilot, Fabric analytics, and agentic automation require in order to produce results anyone will trust.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          {aiStats.map((stat) => (
+            <div class="p-6 bg-slate-900 text-white rounded-2xl border border-slate-800">
+              <span class="block text-3xl font-extrabold text-blue-400 mb-2">{stat.value}</span>
+              <p class="text-xs text-slate-300 leading-relaxed">{stat.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Migration Paths -->
+  <section id="migration-paths" class="py-20 bg-slate-50 border-b border-gray-200">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">MIGRATION PATHS</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+          WHEREVER YOU ARE STARTING FROM, THERE IS A PROVEN PATH
+        </h2>
+        <p class="text-slate-600 text-base mt-4">
+          Velosio has moved thousands of organizations to the Microsoft cloud from legacy Dynamics products and disconnected finance estates.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {migrationPaths.map((path) => (
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide text-blue-600">{path.title}</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">{path.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- AXIO Core Financials -->
+  <section id="axio-core" class="py-20 bg-slate-950 text-white border-b border-slate-800">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-blue-400 font-bold text-xs tracking-widest uppercase block mb-2">PROVEN SOLUTION</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">
+          AXIO CORE FINANCIALS POWERED BY AI
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          Instead of a blank system and a year of workshops, your project starts from a functioning financial system with 40+ pre-built processes, data migration accelerators, industry configurations, and more than a dozen purpose-built apps.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {axioStats.map((stat) => (
+          <div class="p-8 bg-slate-900 rounded-2xl border border-slate-800 text-center">
+            <span class="block text-4xl font-extrabold text-blue-400 mb-2">{stat.value}</span>
+            <p class="text-xs text-slate-300 font-semibold">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section id="industries" class="py-20 bg-white border-b border-gray-100">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">WHO IT IS BUILT FOR</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+          COMPLEXITY IS THE QUALIFIER
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {industries.map((ind) => (
+          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+            <h3 class="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wider text-blue-600">{ind.title}</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">{ind.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs Section -->
+  <section id="faq" class="py-20 bg-slate-50">
+    <div class="max-w-screen-lg mx-auto px-4 md:px-8">
+      <div class="text-center mb-12">
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">DYNAMICS 365 FINANCE, ANSWERED</span>
+        <h2 class="text-3xl font-extrabold text-slate-900">
+          FREQUENTLY ASKED QUESTIONS
+        </h2>
+      </div>
+
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">{faq.question}</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Banner -->
+  <section class="bg-blue-600 text-white py-16">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+        EARLIER IN YOUR EVALUATION? START WITH THE GUIDE.
+      </h2>
+      <p class="text-blue-100 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+        Building a Unified Digital Foundation is Velosio's executive guide to modernizing the systems your business runs on. Written for CFOs, COOs, and CIOs.
+      </p>
+      <a
+        href="#demo-form"
+        class="inline-flex items-center bg-slate-950 text-white hover:bg-slate-900 font-bold text-sm px-8 py-4 rounded-xl shadow-lg transition-all gap-2"
+      >
+        <span>DOWNLOAD THE FREE GUIDE</span>
+        <svg class="size-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+const footerLinks = [
+  {
+    title: "Solutions",
+    links: [
+      { href: "#d365-finance", label: "Dynamics 365 Finance" },
+      { href: "#axio-core", label: "AXIO Core Financials" },
+      { href: "#ai-readiness", label: "AI & Copilot Integration" },
+      { href: "#migration-paths", label: "AX 2009 / AX 2012 / GP Migration" },
+      { href: "#demo-agenda", label: "Multi-Entity Consolidation" },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { href: "#industries", label: "Manufacturing" },
+      { href: "#industries", label: "Distribution & Supply Chain" },
+      { href: "#industries", label: "ProServ & Project-Based" },
+      { href: "#industries", label: "Field Service" },
+    ],
+  },
+  {
+    title: "Company & Contact",
+    links: [
+      { href: "mailto:contact@improved365.com", label: "✉️ contact@improved365.com", isEmail: true },
+      { href: "#demo-form", label: "Schedule Live Demo" },
+      { href: "#faq", label: "D365 Finance FAQ" },
+    ],
+  },
+];
+---
+
+<footer class="bg-slate-950 text-white mt-16 py-16 border-t border-slate-800">
+  <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <div class="flex items-center gap-3 font-bold text-2xl tracking-tight text-white mb-4">
+          <span class="bg-blue-600 text-white font-extrabold px-3 py-1 rounded-md text-base">i365</span>
+          <span>Improved<span class="text-blue-400">365</span></span>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+          Microsoft US Partner of the Year & 30x Inner Circle Winner. Transforming pre-modernized ERPs into AI-ready systems for mid-market and enterprise leaders.
+        </p>
+        <a
+          href="#demo-form"
+          class="inline-block bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold py-2.5 px-5 rounded-lg shadow-md transition-all uppercase tracking-wider"
+        >
+          Schedule Your Demo
+        </a>
+      </div>
+
+      {footerLinks.map((col) => (
+        <div>
+          <h3 class="font-bold text-white mb-4 text-base tracking-wide uppercase text-xs text-blue-400">{col.title}</h3>
+          <ul class="space-y-2.5 text-sm">
+            {col.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-slate-400 hover:text-blue-300 transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+      <p>© 2026 improved365.com — All Rights Reserved. Dynamics 365 Finance & Modernization Solutions.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+        <a href="#" class="hover:text-slate-300">Terms of Service</a>
+        <a href="mailto:contact@improved365.com" class="hover:text-slate-300">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>
