@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { DEMO_FORM_ENDPOINT } from "@/config/demoForm";
 
 const faqs = [
   {
@@ -182,36 +183,96 @@ const resultsStats = [
               A walkthrough focused on your Dynamics 365 goals — implementation, upgrade, integration, or getting more from what you already run.
             </p>
 
-            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for scheduling a demo. An Improved365 solutions architect will reach out shortly.');">
+            <form id="demoLeadForm" class="space-y-4" novalidate>
               <div class="grid grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-xs font-medium text-slate-300 mb-1">First name*</label>
-                  <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                  <label for="demo-first-name" class="block text-xs font-medium text-slate-300 mb-1">First name*</label>
+                  <input id="demo-first-name" name="firstName" type="text" required autocomplete="given-name" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
                 </div>
                 <div>
-                  <label class="block text-xs font-medium text-slate-300 mb-1">Last name*</label>
-                  <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                  <label for="demo-last-name" class="block text-xs font-medium text-slate-300 mb-1">Last name*</label>
+                  <input id="demo-last-name" name="lastName" type="text" required autocomplete="family-name" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
                 </div>
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Email*</label>
-                <input type="email" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                <label for="demo-email" class="block text-xs font-medium text-slate-300 mb-1">Email*</label>
+                <input id="demo-email" name="email" type="email" required autocomplete="email" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Company name*</label>
-                <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                <label for="demo-company" class="block text-xs font-medium text-slate-300 mb-1">Company name*</label>
+                <input id="demo-company" name="company" type="text" required autocomplete="organization" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Job title*</label>
-                <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+                <label for="demo-job-title" class="block text-xs font-medium text-slate-300 mb-1">Job title*</label>
+                <input id="demo-job-title" name="jobTitle" type="text" required autocomplete="organization-title" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
               </div>
+              <p id="demoFormStatus" class="hidden text-sm leading-relaxed" role="status" aria-live="polite"></p>
               <button
+                id="demoSubmitBtn"
                 type="submit"
-                class="w-full bg-[#f06a31] hover:bg-[#d55317] text-white font-extrabold text-sm py-3.5 px-6 rounded-xl shadow-lg transition-all tracking-wider uppercase"
+                class="w-full bg-[#f06a31] hover:bg-[#d55317] text-white font-extrabold text-sm py-3.5 px-6 rounded-xl shadow-lg transition-all tracking-wider uppercase disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 REQUEST DEMO NOW
               </button>
             </form>
+            <script define:vars={{ DEMO_FORM_ENDPOINT }}>
+              (function () {
+                var form = document.getElementById('demoLeadForm');
+                if (!form) return;
+                var statusEl = document.getElementById('demoFormStatus');
+                var btn = document.getElementById('demoSubmitBtn');
+                var endpoint = DEMO_FORM_ENDPOINT || '';
+
+                function setStatus(msg, kind) {
+                  if (!statusEl) return;
+                  statusEl.textContent = msg;
+                  statusEl.classList.remove('hidden', 'text-red-400', 'text-emerald-400', 'text-slate-400');
+                  statusEl.classList.add(kind === 'ok' ? 'text-emerald-400' : kind === 'err' ? 'text-red-400' : 'text-slate-400');
+                }
+
+                form.addEventListener('submit', function (event) {
+                  event.preventDefault();
+                  if (!form.reportValidity()) return;
+
+                  if (!endpoint) {
+                    setStatus('Demo requests are not connected yet. Email contact@improved365.com directly and we will set up a time.', 'err');
+                    return;
+                  }
+
+                  var payload = {
+                    firstName: form.firstName.value.trim(),
+                    lastName: form.lastName.value.trim(),
+                    email: form.email.value.trim(),
+                    company: form.company.value.trim(),
+                    jobTitle: form.jobTitle.value.trim(),
+                    source: window.location.href
+                  };
+
+                  btn.disabled = true;
+                  setStatus('Sending…', 'info');
+
+                  fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload),
+                    redirect: 'follow'
+                  })
+                    .then(function (res) {
+                      if (!res.ok && res.type !== 'opaque') {
+                        throw new Error('Request failed');
+                      }
+                      setStatus('Thank you. An Improved365 solutions architect will reach out shortly.', 'ok');
+                      form.reset();
+                    })
+                    .catch(function () {
+                      setStatus('Something went wrong. Email contact@improved365.com and we will follow up.', 'err');
+                    })
+                    .finally(function () {
+                      btn.disabled = false;
+                    });
+                });
+              })();
+            </script>
           </div>
         </div>
       </div>
