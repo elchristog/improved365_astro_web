@@ -24,6 +24,16 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      - name: Verify build output has F&O positioning
+        run: |
+          grep -q "UPGRADE EXPERTS FROM DYNAMICS AX 2012" dist/index.html
+          grep -q "Finance & Operations" dist/index.html
+          ! grep -q "Partner of the Year" dist/index.html
+          ! grep -q "Inner Circle" dist/index.html
+          ! grep -q "Customer Engagement" dist/index.html
+          echo "Build marker OK"
+          head -c 400 dist/index.html
+
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
@@ -35,6 +45,24 @@ jobs:
       - name: Sync build files to Google Cloud Storage
         run: |
           gcloud storage rsync --recursive --delete-unmatched-destination-objects dist/ gs://improved365.com
+          # Force homepage + AX page overwrite (rsync has skipped stale index.html before)
+          gcloud storage cp dist/index.html gs://improved365.com/index.html \
+            --cache-control="no-cache, max-age=0" \
+            --content-type="text/html; charset=utf-8"
+          gcloud storage cp dist/ax-2012-to-dynamics-365/index.html \
+            gs://improved365.com/ax-2012-to-dynamics-365/index.html \
+            --cache-control="no-cache, max-age=0" \
+            --content-type="text/html; charset=utf-8"
+
+      - name: Verify bucket homepage after upload
+        run: |
+          gcloud storage cat gs://improved365.com/index.html | grep -q "UPGRADE EXPERTS FROM DYNAMICS AX 2012"
+          gcloud storage cat gs://improved365.com/index.html | grep -q "Finance & Operations"
+          if gcloud storage cat gs://improved365.com/index.html | grep -q "Partner of the Year"; then
+            echo "ERROR: bucket still has Partner of the Year"
+            exit 1
+          fi
+          echo "Bucket homepage verified"
 
       - name: Set web configuration and caching
         continue-on-error: true
