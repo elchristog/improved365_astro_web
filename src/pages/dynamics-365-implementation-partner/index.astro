@@ -1,0 +1,58 @@
+---
+import ServiceLayout from "@/layouts/ServiceLayout.astro";
+
+const faqs = [
+  {
+    question: "What does a Dynamics 365 implementation partner do?",
+    answer: "An implementation partner scopes, configures, customizes, migrates data, integrates systems, and goes live with Dynamics 365 — Finance & Operations and/or Customer Engagement — so the platform matches how your business actually runs."
+  },
+  {
+    question: "How long does a Dynamics 365 implementation take with Improved365?",
+    answer: "With Accelerated Delivery and 40+ pre-configured financial workflows, core modules can be live in as few as 6 months — up to 50% faster than traditional implementations."
+  },
+  {
+    question: "How is Improved365 different from large system integrators?",
+    answer: "20+ years across Dynamics AX and Dynamics 365, a 95% project success rate, and up to 67% lower implementation cost versus traditional consultants — without the overhead of a generalist SI."
+  }
+];
+---
+
+<ServiceLayout
+  title="Dynamics 365 Implementation Partner | Improved365"
+  description="Dynamics 365 implementation partner with 20+ years across AX and D365. Finance & Operations and Customer Engagement — faster time-to-value, lower risk. Schedule a demo."
+  canonical="https://improved365.com/dynamics-365-implementation-partner/"
+  badge="IMPLEMENTATION PARTNER"
+  h1="DYNAMICS 365 IMPLEMENTATION PARTNER"
+  intro="Improved365 helps mid-market and enterprise organizations implement Microsoft Dynamics 365 the right way — Finance & Operations and Customer Engagement — with proven templates, clean integrations, and a path to value measured in months, not years."
+  bullets={[
+    "Finance & Operations and Customer Engagement implementations",
+    "Up to 50% faster time-to-value; core modules live in as few as 6 months",
+    "95% project success rate; 67% lower cost vs traditional consultants",
+    "Microsoft US Partner of the Year · 30x Inner Circle"
+  ]}
+  sections={[
+    {
+      title: "Scoped to your business, not a generic template dump",
+      body: "We map your processes first — close, order-to-cash, procure-to-pay, project accounting, CRM — then configure Dynamics 365 so teams adopt it because it matches how they work."
+    },
+    {
+      title: "Finance & Operations + Customer Engagement",
+      body: "Full-stack capability: GL, AP/AR, inventory, supply chain, multi-entity, plus sales, service, and customer operations on Dynamics 365 CE — connected when the business needs one picture."
+    },
+    {
+      title: "Integration and automation built in",
+      body: "We connect Dynamics 365 to the rest of your stack and design workflows that cut manual handoffs — so go-live is not the start of spreadsheet workarounds."
+    },
+    {
+      title: "Accelerators that cut discovery waste",
+      body: "40+ pre-configured financial workflows, automated migration tools, and industry patterns refined across enterprise deployments — less time reinventing the baseline."
+    }
+  ]}
+  faqs={faqs}
+  related={[
+    { href: "/microsoft-dynamics-365-partner/", label: "Microsoft Dynamics 365 Partner" },
+    { href: "/dynamics-365-consultant/", label: "Dynamics 365 Consultant" },
+    { href: "/dynamics-365-implementation-cost/", label: "Implementation Cost" },
+    { href: "/erp-modernization/", label: "ERP Modernization" }
+  ]}
+/>
