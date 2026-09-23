@@ -55,12 +55,20 @@ Este documento detalla la arquitectura y el procedimiento paso a paso implementa
 ### Paso A: Creación y Verificación del Bucket en GCP
 1. Verificar la propiedad del dominio `improved365.com` en [Google Search Console](https://search.google.com/search-console).
 2. Crear el Bucket en Google Cloud Storage con el nombre exacto: `improved365.com`.
-3. Ejecutar los comandos de permisos públicos:
+3. Configurar permisos públicos y el sufijo de página web principal para **evitar el error XML NoSuchKey**:
    ```bash
+   # Permitir acceso público a los objetos del bucket
    gcloud storage buckets update gs://improved365.com --no-public-access-prevention
    gcloud storage buckets add-iam-policy-binding gs://improved365.com --member=allUsers --role=roles/storage.objectViewer
+
+   # CRÍTICO: Configurar index.html como página de inicio por defecto (evita error NoSuchKey XML)
    gcloud storage buckets update gs://improved365.com --web-main-page-suffix=index.html --web-error-page=404.html
    ```
+
+> ⚠️ **Solución a Error `NoSuchKey` (Document tree XML):**
+> Si al ingresar al dominio ves un archivo XML con `<Code>NoSuchKey</Code>`, se debe a dos razones:
+> 1. El bucket no tiene configurado `index.html` como `--web-main-page-suffix`.
+> 2. No se han subido los archivos del sitio compilado (`npm run build` -> `dist/`) al bucket. Con la sincronización inicial ejecutada, `index.html` ya queda disponible.
 
 ### Paso B: Configuración de DNS en Cloudflare
 
