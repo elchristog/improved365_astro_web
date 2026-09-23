@@ -1,0 +1,58 @@
+---
+import ServiceLayout from "@/layouts/ServiceLayout.astro";
+
+const faqs = [
+  {
+    question: "Why move from AX 2012 to Dynamics 365?",
+    answer: "AX 2012 infrastructure is past its useful life for most organizations — hardware cost, security risk, and no path to modern cloud releases, Copilot, or Fabric. Dynamics 365 Cloud Finance & Supply Chain is the supported successor."
+  },
+  {
+    question: "Is this an upgrade or a reimplementation?",
+    answer: "Functionally it is a transition to a new product generation. Improved365 uses migration tooling and AX-era process knowledge so you keep what works, retire technical debt, and land on clean D365 configuration — not a blind lift of every customization."
+  },
+  {
+    question: "How long does an AX 2012 to D365 project take?",
+    answer: "Depends on entities, customizations, and integrations. With Accelerated Delivery, core financial modules can be live in as few as 6 months for well-scoped programs."
+  }
+];
+---
+
+<ServiceLayout
+  title="AX 2012 to Dynamics 365 Migration | Improved365"
+  description="Migrate Microsoft Dynamics AX 2012 to Dynamics 365 Cloud Finance & Supply Chain. 20+ years AX experience. Clear path, lower risk, faster time-to-value."
+  canonical="https://improved365.com/ax-2012-to-dynamics-365/"
+  badge="AX 2012 MIGRATION"
+  h1="AX 2012 TO DYNAMICS 365"
+  intro="Move off Dynamics AX 2012 onto Dynamics 365 Cloud Finance & Supply Chain — without guessing. Improved365 has 20+ years in AX and D365, so the migration plan is built by people who know both codebases."
+  bullets={[
+    "AX 2012 → Dynamics 365 Cloud Finance & Supply Chain",
+    "Also support AX 2009 → D365 Finance paths",
+    "Retire custom technical debt; keep the processes that work",
+    "Up to 50% faster time-to-value vs traditional upgrade programs"
+  ]}
+  sections={[
+    {
+      title: "Why AX 2012 is a countdown clock",
+      body: "On-prem servers, VPN dependencies, and a customization mountain that every release makes harder. Staying put raises security, talent, and integration cost every year."
+    },
+    {
+      title: "Migration approach that respects AX reality",
+      body: "We inventory customizations, integrations, and data — then decide configure vs rebuild. Not every X++ extension deserves a new home; many map to standard D365 features."
+    },
+    {
+      title: "Data and cutover without theater",
+      body: "Automated migration tooling, staged environments, and a cutover plan your finance team can rehearse — so go-live is an operations event, not a weekend hope."
+    },
+    {
+      title: "What you gain on D365",
+      body: "Cloud release cadence, multi-entity and global capabilities, modern reporting, and a clean foundation for Copilot and Fabric — without the hardware tax."
+    }
+  ]}
+  faqs={faqs}
+  related={[
+    { href: "/dynamics-gp-to-dynamics-365/", label: "GP to D365" },
+    { href: "/erp-modernization/", label: "ERP Modernization" },
+    { href: "/dynamics-365-implementation-partner/", label: "Implementation Partner" },
+    { href: "/dynamics-365-implementation-cost/", label: "Implementation Cost" }
+  ]}
+/>
