@@ -34,7 +34,7 @@ jobs:
 
       - name: Sync build files to Google Cloud Storage
         run: |
-          gcloud storage rsync -r -d dist/ gs://improved365.com
+          gcloud storage rsync --recursive --delete-unmatched-destination-objects dist/ gs://improved365.com
 
       - name: Set web configuration and caching
         run: |
