@@ -75,19 +75,23 @@ const expertise = [
 const howWeHelp = [
   {
     title: "IMPLEMENT",
-    desc: "Stand up Dynamics 365 the right way — scoped to your processes, with proven templates that shorten time-to-value."
+    desc: "Stand up Dynamics 365 the right way — scoped to your processes, with proven templates that shorten time-to-value.",
+    href: "/dynamics-365-implementation-partner/"
   },
   {
     title: "CUSTOMIZE",
-    desc: "Shape Finance & Operations and Customer Engagement to fit how your teams work — without building unmaintainable technical debt."
+    desc: "Shape Finance & Operations and Customer Engagement to fit how your teams work — without building unmaintainable technical debt.",
+    href: "/dynamics-365-consultant/"
   },
   {
     title: "INTEGRATE",
-    desc: "Connect Dynamics 365 to the rest of your stack so systems share data cleanly and manual handoffs disappear."
+    desc: "Connect Dynamics 365 to the rest of your stack so systems share data cleanly and manual handoffs disappear.",
+    href: "/microsoft-dynamics-365-partner/"
   },
   {
     title: "OPTIMIZE & SUPPORT",
-    desc: "Improve what you already run — performance, automation, reporting, and day-to-day support as the business grows."
+    desc: "Improve what you already run — performance, automation, reporting, and day-to-day support as the business grows.",
+    href: "/erp-modernization/"
   }
 ];
 
@@ -103,10 +107,20 @@ const demoAgendaItems = [
 ];
 
 const migrationPaths = [
-  { title: "AX 2009 TO D365 FINANCE", desc: "Transition legacy, customized AX 2009 systems into a streamlined, cloud Dynamics 365 platform without business disruption." },
-  { title: "AX 2012 CLOUD TRANSITION", desc: "Eliminate costly on-premises server infrastructure and modernize AX 2012 to Dynamics 365 Cloud Finance & Supply Chain." },
-  { title: "DYNAMICS GP TO ENTERPRISE D365", desc: "Scale beyond GP limits when entity growth, transaction volume, or reporting complexity require enterprise-grade Dynamics 365." },
-  { title: "LEGACY ON-PREM TO CLOUD ERP", desc: "Remove hardware overhead, VPN dependencies, and version lock with modern cloud Dynamics 365 architecture." }
+  { title: "AX 2009 TO D365 FINANCE", desc: "Transition legacy, customized AX 2009 systems into a streamlined, cloud Dynamics 365 platform without business disruption.", href: "/ax-2012-to-dynamics-365/" },
+  { title: "AX 2012 CLOUD TRANSITION", desc: "Eliminate costly on-premises server infrastructure and modernize AX 2012 to Dynamics 365 Cloud Finance & Supply Chain.", href: "/ax-2012-to-dynamics-365/" },
+  { title: "DYNAMICS GP TO ENTERPRISE D365", desc: "Scale beyond GP limits when entity growth, transaction volume, or reporting complexity require enterprise-grade Dynamics 365.", href: "/dynamics-gp-to-dynamics-365/" },
+  { title: "LEGACY ON-PREM TO CLOUD ERP", desc: "Remove hardware overhead, VPN dependencies, and version lock with modern cloud Dynamics 365 architecture.", href: "/erp-modernization/" }
+];
+
+const moneyPages = [
+  { href: "/dynamics-365-implementation-partner/", label: "Implementation Partner" },
+  { href: "/microsoft-dynamics-365-partner/", label: "Dynamics 365 Partner" },
+  { href: "/dynamics-365-consultant/", label: "Dynamics 365 Consultant" },
+  { href: "/dynamics-365-implementation-cost/", label: "Implementation Cost" },
+  { href: "/erp-modernization/", label: "ERP Modernization" },
+  { href: "/ax-2012-to-dynamics-365/", label: "AX 2012 → D365" },
+  { href: "/dynamics-gp-to-dynamics-365/", label: "GP → D365" }
 ];
 
 const industries = [
@@ -127,7 +141,7 @@ const resultsStats = [
 <BaseLayout
   title="Microsoft Dynamics 365 Partner | Implement, Customize, Integrate | Improved365"
   description="Helping businesses get more from Microsoft Dynamics 365. 20+ years across Dynamics AX and Dynamics 365. Implement, customize, integrate, optimize, and support Finance & Operations and Customer Engagement."
-  canonical="https://improved365.com"
+  canonical="https://improved365.com/"
   type="home"
   faqs={faqs}
 >
@@ -231,10 +245,15 @@ const resultsStats = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {howWeHelp.map((item) => (
-          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <a href={item.href} class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all block">
             <h3 class="text-sm font-bold text-blue-600 mb-2 uppercase tracking-wide">{item.title}</h3>
             <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
-          </div>
+          </a>
+        ))}
+      </div>
+      <div class="mt-10 flex flex-wrap gap-3">
+        {moneyPages.map((p) => (
+          <a href={p.href} class="text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-4 py-2 rounded-lg hover:bg-blue-100">{p.label}</a>
         ))}
       </div>
     </div>
@@ -334,12 +353,13 @@ const resultsStats = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {migrationPaths.map((path) => (
-          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <a href={path.href} class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition-all">
             <div>
               <h3 class="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide text-blue-600">{path.title}</h3>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">{path.desc}</p>
+              <span class="text-xs font-bold text-blue-600">Learn more →</span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
