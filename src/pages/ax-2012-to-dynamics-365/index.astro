@@ -4,48 +4,92 @@ import ServiceLayout from "@/layouts/ServiceLayout.astro";
 const faqs = [
   {
     question: "Why upgrade from Dynamics AX 2012 to Dynamics 365 Finance & Operations?",
-    answer: "Dynamics AX 2012 infrastructure is past its useful life for most organizations — hardware cost, security risk, and no path to modern cloud releases. Dynamics 365 Finance & Operations is the supported cloud successor."
+    answer: "Dynamics AX 2012 is past its useful life for most organizations — hardware cost, security risk, limited talent pool, and no path to modern cloud releases. Dynamics 365 Finance & Operations is the supported cloud successor for finance and supply chain."
   },
   {
-    question: "Is this an upgrade or a reimplementation?",
-    answer: "It is a transition to a new product generation. Improved365 uses migration tooling and Dynamics AX 2012 process knowledge so you keep what works, retire technical debt, and land on clean Dynamics 365 Finance & Operations configuration — not a blind lift of every customization."
+    question: "Is an AX 2012 to D365 Finance & Operations project an upgrade or a reimplementation?",
+    answer: "It is a product-generation transition. Improved365 inventories your Dynamics AX 2012 customizations, integrations, and data, then maps what still belongs on Dynamics 365 Finance & Operations. You keep working processes; you retire technical debt instead of lifting every X++ extension blindly."
   },
   {
-    question: "Are you upgrade experts from Dynamics AX 2012 to D365 Finance & Operations?",
-    answer: "Yes. That is a core focus of Improved365 — planning and delivering upgrades from Dynamics AX 2012 to Dynamics 365 Finance & Operations with clear scope, data migration, and cutover."
+    question: "Are you upgrade experts from Dynamics AX 2012 to Dynamics 365 Finance & Operations?",
+    answer: "Yes. That is a core focus of Improved365 — planning and delivering upgrades from Dynamics AX 2012 to Dynamics 365 Finance & Operations with clear scope, data migration, cutover, and post-go-live support."
+  },
+  {
+    question: "What happens to our AX 2012 customizations?",
+    answer: "We classify each customization: replace with standard Dynamics 365 Finance & Operations, rebuild as a supportable extension, retire, or keep via a temporary integration. Most mature AX 2012 environments can drop a large share of custom code when F&O standard covers the process."
+  },
+  {
+    question: "How is master and transactional data migrated?",
+    answer: "We define source-to-target maps for chart of accounts, customers, vendors, items, open transactions, and history you still need. Data is cleaned before load, validated in a staging environment, and cut over with a rehearsed plan your finance team owns."
+  },
+  {
+    question: "How long does an AX 2012 to Dynamics 365 Finance & Operations upgrade take?",
+    answer: "It depends on legal entities, customization depth, integrations, and data quality. Well-scoped programs often land core Finance & Operations modules in a phased timeline measured in months, not multi-year theater — after a proper assessment, not a guess."
+  },
+  {
+    question: "Do you also implement Dynamics 365 CRM as part of the upgrade?",
+    answer: "No. Our practice is Dynamics 365 Finance & Operations and Dynamics AX 2012 upgrades to F&O. CRM / Customer Engagement is out of scope."
+  }
+];
+
+const processSteps = [
+  {
+    title: "1. ASSESS AX 2012 REALITY",
+    body: "Inventory Dynamics AX 2012 modules in use, legal entities, customizations, ISV solutions, integrations, reports, and data quality. Output: a clear fit/gap to Dynamics 365 Finance & Operations and a risk list — not a sales deck."
+  },
+  {
+    title: "2. DEFINE THE TARGET F&O MODEL",
+    body: "Design the Dynamics 365 Finance & Operations blueprint: chart of accounts, dimensions, warehouses, supply chain scope, security, and which processes stay configure-only vs need extension."
+  },
+  {
+    title: "3. DECIDE CUSTOMIZATION FATE",
+    body: "Every AX 2012 customization gets a verdict: standard F&O, rebuild, retire, or bridge. This is where cost and timeline are won or lost."
+  },
+  {
+    title: "4. MIGRATE AND VALIDATE DATA",
+    body: "Map and clean masters and opens. Load into staging Dynamics 365 Finance & Operations environments. Finance validates balances and operational teams validate orders, inventory, and vendors before cutover."
+  },
+  {
+    title: "5. INTEGRATE AND AUTOMATE",
+    body: "Reconnect banks, tax, e-commerce, WMS, payroll, and other systems to Dynamics 365 Finance & Operations. Replace spreadsheet handoffs with durable integrations and workflows."
+  },
+  {
+    title: "6. REHEARSE CUTOVER AND GO LIVE",
+    body: "Dry-run the cutover weekend. Freeze rules, reconciliation checklists, hypercare staffing, and day-two support so go-live on Dynamics 365 Finance & Operations is an operations event — not a hope."
   }
 ];
 ---
 
 <ServiceLayout
   title="Upgrade Dynamics AX 2012 to Dynamics 365 Finance & Operations | Improved365"
-  description="Upgrade experts from Dynamics AX 2012 to Microsoft Dynamics 365 Finance & Operations. Clear path, lower risk, deep AX 2012 and F&O expertise."
+  description="Upgrade experts from Dynamics AX 2012 to Microsoft Dynamics 365 Finance & Operations. Assessment, customization triage, data migration, cutover, and F&O go-live."
   canonical="https://improved365.com/ax-2012-to-dynamics-365/"
   badge="AX 2012 → D365 F&O UPGRADE EXPERTS"
   h1="UPGRADE FROM DYNAMICS AX 2012 TO DYNAMICS 365 FINANCE & OPERATIONS"
-  intro="Improved365 are upgrade experts from Dynamics AX 2012 to Dynamics 365 Finance & Operations. Move off on-prem AX 2012 onto modern cloud F&O — without guessing. 20+ years across Dynamics AX 2012 and Dynamics 365 Finance & Operations."
+  intro="Improved365 are upgrade experts from Dynamics AX 2012 to Dynamics 365 Finance & Operations. Move off on-prem AX 2012 onto modern cloud F&O with a plan built by people who know both platforms — not a generic ERP slide pack."
   bullets={[
     "Upgrade experts: Dynamics AX 2012 → Dynamics 365 Finance & Operations",
-    "Inventory customizations, migrate data, retire technical debt",
-    "Clean F&O configuration — not a blind lift of every X++ extension",
-    "Finance-led cutover your team can rehearse"
+    "Full assessment: customizations, integrations, data, entities",
+    "Triage every X++ extension — standard F&O, rebuild, or retire",
+    "Finance-led data migration and rehearsed cutover",
+    "No CRM scope — Finance & Operations only"
   ]}
   sections={[
     {
       title: "Why Dynamics AX 2012 is a countdown clock",
-      body: "On-prem servers, VPN dependencies, and a customization mountain that every year makes harder. Staying on Dynamics AX 2012 raises security, talent, and integration cost."
+      body: "On-prem servers, VPN dependencies, aging ISVs, and a shrinking talent pool. Staying on Dynamics AX 2012 raises security, support, and opportunity cost every year while Dynamics 365 Finance & Operations moves forward on a cloud release cadence."
     },
     {
       title: "Upgrade approach that respects AX 2012 reality",
-      body: "We inventory Dynamics AX 2012 customizations, integrations, and data — then decide configure vs rebuild on Dynamics 365 Finance & Operations. Not every extension deserves a new home; many map to standard F&O."
+      body: "We start from your live Dynamics AX 2012 environment — not a blank template. Customizations, batch jobs, integrations, and tribal process knowledge are inventoried before anyone proposes a go-live date."
     },
     {
-      title: "Data and cutover without theater",
-      body: "Migration tooling, staged environments, and a cutover plan your finance team can rehearse — so go-live on Dynamics 365 Finance & Operations is an operations event, not a weekend hope."
+      title: "Configuration first on Dynamics 365 Finance & Operations",
+      body: "Most AX 2012 pain is outdated customization, not missing features. We map processes to standard Dynamics 365 Finance & Operations first and only extend when the business case is clear and supportable."
     },
     {
       title: "What you gain on Dynamics 365 Finance & Operations",
-      body: "Cloud release cadence, multi-entity and global capabilities, modern reporting, and a platform Microsoft continues to advance — without the hardware tax of Dynamics AX 2012."
+      body: "Cloud operations without hardware refresh cycles, stronger multi-entity and multi-currency finance, modern supply chain options, cleaner reporting, and a platform Microsoft continues to invest in — without the AX 2012 tax."
     }
   ]}
   faqs={faqs}
@@ -55,4 +99,76 @@ const faqs = [
     { href: "/dynamics-365-consultant/", label: "D365 F&O Consulting" },
     { href: "/dynamics-365-implementation-cost/", label: "Implementation Cost" }
   ]}
-/>
+>
+  <section class="py-16 bg-slate-50 border-b border-gray-200">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="max-w-3xl mb-10">
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">UPGRADE PROCESS</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-4">
+          How an AX 2012 to Dynamics 365 Finance & Operations upgrade runs
+        </h2>
+        <p class="text-slate-600 text-base leading-relaxed">
+          Six stages from assessment to hypercare. Each stage has a concrete exit criteria so scope and cost stay visible.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {processSteps.map((step) => (
+          <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="text-sm font-bold text-blue-600 mb-2 uppercase tracking-wide">{step.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{step.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-b border-gray-100">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div>
+          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Data migration that finance will sign off</h2>
+          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+            Upgrades fail when open payables, inventory valuations, or bank balances do not reconcile on day one. Our Dynamics AX 2012 → Dynamics 365 Finance & Operations data work is built for finance ownership:
+          </p>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> Chart of accounts and financial dimensions mapped and tested</li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> Customers, vendors, items, and open transactions cleaned before load</li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> Historical depth agreed up front — not “migrate everything forever”</li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> Trial loads in staging with balance and operational sign-off</li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> Cutover checklist with freeze windows and reconciliation owners</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">Customization triage, not customization worship</h2>
+          <p class="text-sm text-slate-600 leading-relaxed mb-4">
+            Dynamics AX 2012 environments often carry a decade of X++ and ISV layers. Blind lift-and-shift into Dynamics 365 Finance & Operations recreates the same debt in the cloud. We triage:
+          </p>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> <strong>Standard F&O</strong> — process fits out of the box</li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> <strong>Rebuild</strong> — real differentiator, rebuilt as a supportable extension</li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> <strong>Retire</strong> — workaround no longer needed</li>
+            <li class="flex gap-2"><span class="text-blue-600 font-bold">✓</span> <strong>Bridge</strong> — temporary integration while a process redesign lands</li>
+          </ul>
+          <p class="text-sm text-slate-600 leading-relaxed mt-4">
+            That triage is what keeps Dynamics 365 Finance & Operations upgrades on budget and supportable after go-live.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-950 text-white border-b border-slate-800">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="max-w-3xl">
+        <span class="text-blue-400 font-bold text-xs tracking-widest uppercase block mb-2">WHO THIS IS FOR</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-4">CFOs, Controllers, and IT leaders still on Dynamics AX 2012</h2>
+        <p class="text-slate-300 text-base leading-relaxed mb-6">
+          If month-end still depends on exports, your servers are end-of-life, or you cannot hire AX 2012 specialists, it is time to plan the move to Dynamics 365 Finance & Operations — with upgrade experts who will not pretend CRM is part of the deal.
+        </p>
+        <a href="/#demo-form" class="inline-flex items-center bg-[#f06a31] hover:bg-[#d55317] text-white font-extrabold text-sm py-3.5 px-7 rounded-xl shadow-lg transition-all tracking-wider uppercase">
+          Schedule an AX 2012 upgrade conversation
+        </a>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
