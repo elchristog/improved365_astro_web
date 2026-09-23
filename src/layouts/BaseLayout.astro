@@ -12,14 +12,16 @@ interface Props {
   faqs?: Array<{ question: string; answer: string }>;
   datePublished?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, description, canonical, type, faqs, datePublished, ogImage } = Astro.props;
+const { title, description, canonical, type, faqs, datePublished, ogImage, noindex = false } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
   <head>
     <BaseHead title={title} description={description} canonical={canonical} type={type} faqs={faqs} datePublished={datePublished} ogImage={ogImage} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZF1G0T80D2"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
