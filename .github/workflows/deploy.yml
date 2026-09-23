@@ -28,11 +28,11 @@ jobs:
         run: |
           grep -q "UPGRADE EXPERTS FROM DYNAMICS AX 2012" dist/index.html
           grep -q "Finance & Operations" dist/index.html
-          ! grep -q "Partner of the Year" dist/index.html
-          ! grep -q "Inner Circle" dist/index.html
-          ! grep -q "Customer Engagement" dist/index.html
+          if grep -q "Partner of the Year" dist/index.html; then echo "bad: Partner of the Year"; exit 1; fi
+          if grep -q "Inner Circle" dist/index.html; then echo "bad: Inner Circle"; exit 1; fi
+          if grep -q "30x Microsoft" dist/index.html; then echo "bad: 30x claim"; exit 1; fi
           echo "Build marker OK"
-          head -c 400 dist/index.html
+          head -c 500 dist/index.html
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
