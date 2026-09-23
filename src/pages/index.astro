@@ -3,35 +3,35 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 const faqs = [
   {
-    question: "How Much Does a Dynamics 365 Finance Implementation Cost?",
-    answer: "Licensing is predictable. Implementation is a tailored investment shaped by scope, data migration, integrations, and user enablement. Improved365 Accelerated ERP Modernization removes budget risk by deploying from proven, pre-configured financial templates rather than starting from scratch."
+    question: "What Does Improved365 Do?",
+    answer: "We help organizations implement, customize, integrate, and optimize Microsoft Dynamics 365 so their technology works better for the business. With 20+ years across Dynamics AX and Dynamics 365, we combine deep technical expertise with practical business knowledge."
+  },
+  {
+    question: "Which Dynamics 365 Workloads Do You Support?",
+    answer: "Dynamics 365 Finance & Operations (implementation, configuration, customization, development, and support) and Dynamics 365 Customer Engagement/CRM (development, customization, and integration), plus business process automation, system integration, data & reporting, and Azure/DevOps."
   },
   {
     question: "How Fast Can We Complete ERP Modernization?",
-    answer: "With Improved365 Accelerated Delivery, deployment is up to 50% faster than standard Dynamics 365 Finance implementations, with core financial modules live in as few as 6 months."
+    answer: "With Improved365 Accelerated Delivery, deployment is up to 50% faster than standard Dynamics 365 implementations, with core financial modules live in as few as 6 months."
   },
   {
     question: "We Run Legacy Dynamics AX or GP. Do We Have to Upgrade?",
-    answer: "Dynamics AX 2009, AX 2012, and GP are on countdown clocks with infrastructure past end-of-life. Upgrading to Dynamics 365 Finance with Improved365 eliminates hardware maintenance, reduces custom technical debt, and secures modern cloud AI tools."
+    answer: "Dynamics AX 2009, AX 2012, and GP are on countdown clocks with infrastructure past end-of-life. Upgrading to Dynamics 365 with Improved365 eliminates hardware maintenance, reduces custom technical debt, and unlocks modern cloud and AI capabilities."
   },
   {
-    question: "How Does Improved365 Reduce ERP Implementation Risk?",
-    answer: "Improved365 utilizes 40+ pre-configured financial workflows, automated data migration tools, and industry best practices refined across hundreds of enterprise deployments, achieving a 95% project success rate."
+    question: "How Does Improved365 Reduce Implementation Risk?",
+    answer: "Improved365 uses 40+ pre-configured financial workflows, automated data migration tools, and industry best practices refined across hundreds of enterprise deployments, achieving a 95% project success rate."
   },
   {
-    question: "Can Dynamics 365 Finance Support Multi-Entity and Global Consolidations?",
-    answer: "Yes. D365 Finance seamlessly consolidates multiple legal entities, currencies, and corporate acquisitions on a unified chart of accounts with automated intercompany eliminations."
-  },
-  {
-    question: "Why Is ERP Modernization Mandatory for Financial AI & Copilot?",
-    answer: "AI models operating on legacy, siloed data yield inaccurate insights. Dynamics 365 Finance serves as the unified, real-time single source of truth required for Microsoft Copilot and Fabric analytics."
+    question: "Can You Integrate Dynamics 365 With Our Other Systems?",
+    answer: "Yes. We connect Dynamics 365 with other applications, services, and business systems so data flows cleanly across the stack — reducing manual work and creating a single operational picture."
   }
 ];
 
 const stats = [
-  { value: "91%", label: "Of finance teams require 4+ days to complete month-end close (ERP Benchmark Study, 2026)" },
-  { value: "11+ hrs", label: "Lost weekly to manual spreadsheets by 68% of finance operations teams" },
-  { value: "30x", label: "Microsoft Inner Circle Elite Partner & Cloud ERP Modernization Specialists" }
+  { value: "20+", label: "Years across Dynamics AX and Dynamics 365" },
+  { value: "95%", label: "Project success rate across enterprise deployments" },
+  { value: "30x", label: "Microsoft Inner Circle Elite Partner" }
 ];
 
 const problemStats = [
@@ -45,71 +45,111 @@ const trustedBrands = [
   "IRRIMAX", "SAUNDERS BROTHERS", "KIDDER MATTHEWS", "RUDOLPHE LIBBE", "FINDLAY VINYL", "CABINET DISCOUNTERS"
 ];
 
-const demoAgendaItems = [
-  { title: "AI-DRIVEN FINANCIAL MANAGEMENT", desc: "Experience unified visibility across General Ledger, AP/AR, and sub-ledgers with full transactional drill-down capabilities for CFOs and Controllers." },
-  { title: "AUTOMATED RECONCILIATION ENGINE", desc: "Automate bank reconciliations, 3-way invoice matching, and anomaly detection without relying on manual Excel workarounds." },
-  { title: "GLOBAL MULTI-ENTITY CONSOLIDATION", desc: "Manage multi-currency transactions, subsidiary accounts, and intercompany eliminations in real time within one centralized system." },
-  { title: "INTELLIGENT FORECASTING & PLANNING", desc: "Eliminate forecast variance with continuous, AI-assisted budgeting built directly on live transactional data." },
-  { title: "REAL-TIME CASH FLOW INTELLIGENCE", desc: "Predict customer payment patterns, optimize working capital, and gain full cash visibility against live receivables." },
-  { title: "GOVERNANCE & AUDIT COMPLIANCE", desc: "Enforce segregation of duties, automated approval workflows, and continuous audit-ready compliance reporting." },
-  { title: "MICROSOFT COPILOT WORKFLOWS", desc: "Deploy AI Copilot assistants inside daily workflows to generate financial narratives, analyze variance, and automate tasks." },
-  { title: "MICROSOFT FABRIC & POWER BI INTEGRATION", desc: "Unify finance and operational telemetry in a high-performance analytics foundation for executive decision-making." }
+const expertise = [
+  {
+    title: "DYNAMICS 365 FINANCE & OPERATIONS",
+    desc: "Implementation, configuration, customization, development, and support — so Finance & Supply Chain run the way your business actually works."
+  },
+  {
+    title: "DYNAMICS 365 CUSTOMER ENGAGEMENT / CRM",
+    desc: "Development, customization, and integration for sales, service, and customer operations on Dynamics 365 CE."
+  },
+  {
+    title: "BUSINESS PROCESS AUTOMATION",
+    desc: "Design solutions that streamline workflows, cut repetitive manual work, and free teams for higher-value decisions."
+  },
+  {
+    title: "SYSTEM INTEGRATION",
+    desc: "Connect Dynamics 365 with other applications, services, and business systems so data and processes move without friction."
+  },
+  {
+    title: "DATA & REPORTING",
+    desc: "SQL Server, SSRS, dashboards, and custom reporting that turn operational data into information leaders can act on."
+  },
+  {
+    title: "CLOUD & DEVOPS",
+    desc: "Azure environments, deployment pipelines, monitoring, and ongoing development so your platform stays reliable and scalable."
+  }
 ];
 
-const aiStats = [
-  { value: "66%", text: "Are actively deploying or piloting AI across finance and business operations." },
-  { value: "58%", text: "Identify fragmented, legacy data as the primary barrier to successful AI execution." },
-  { value: "6%", text: "Report having clean, AI-ready data infrastructure, leaving 94% needing modernization." },
-  { value: "3x", text: "Dynamics 365 users are 3x more likely to possess unified, AI-ready data foundation." }
+const howWeHelp = [
+  {
+    title: "IMPLEMENT",
+    desc: "Stand up Dynamics 365 the right way — scoped to your processes, with proven templates that shorten time-to-value."
+  },
+  {
+    title: "CUSTOMIZE",
+    desc: "Shape Finance & Operations and Customer Engagement to fit how your teams work — without building unmaintainable technical debt."
+  },
+  {
+    title: "INTEGRATE",
+    desc: "Connect Dynamics 365 to the rest of your stack so systems share data cleanly and manual handoffs disappear."
+  },
+  {
+    title: "OPTIMIZE & SUPPORT",
+    desc: "Improve what you already run — performance, automation, reporting, and day-to-day support as the business grows."
+  }
+];
+
+const demoAgendaItems = [
+  { title: "CURRENT STATE & GOALS", desc: "Map your business requirements, system landscape, and growth priorities so the session is specific to your organization." },
+  { title: "FINANCE & OPERATIONS WALKTHROUGH", desc: "See how Dynamics 365 Finance & Operations supports GL, AP/AR, inventory, and multi-entity operations end to end." },
+  { title: "CUSTOMER ENGAGEMENT OPTIONS", desc: "Review CRM capabilities for sales, service, and customer operations — and how they connect to finance and operations." },
+  { title: "INTEGRATION & AUTOMATION", desc: "Identify where system connections and workflow automation remove manual effort and data re-entry." },
+  { title: "DATA, REPORTING & ANALYTICS", desc: "Turn transactional data into dashboards and reports leaders use for close, cash, and operational decisions." },
+  { title: "CLOUD, DEVOPS & SUPPORT MODEL", desc: "Cover Azure environments, deployment pipelines, monitoring, and how ongoing support keeps the platform healthy." },
+  { title: "MIGRATION PATH (IF APPLICABLE)", desc: "For AX, GP, or other legacy systems — a clear path to Dynamics 365 without unnecessary disruption." },
+  { title: "NEXT STEPS & TIMELINE", desc: "Leave with a practical scope outline, rough timeline, and recommended path to value." }
 ];
 
 const migrationPaths = [
-  { title: "AX 2009 TO D365 FINANCE", desc: "Transition legacy, customized AX 2009 systems into a streamlined, AI-enabled cloud ERP platform without business disruption." },
-  { title: "AX 2012 CLOUD TRANSFORMATION", desc: "Eliminate costly on-premises server infrastructure and modernize AX 2012 to Dynamics 365 Cloud Finance & Supply Chain." },
-  { title: "DYNAMICS GP TO ENTERPRISE D365", desc: "Scale beyond GP limits when entity growth, transaction volume, or reporting complexity require enterprise-grade finance." },
-  { title: "LEGACY ON-PREM TO CLOUD ERP", desc: "Remove hardware overhead, VPN dependencies, and version lock with modern Cloud ERP architecture." }
+  { title: "AX 2009 TO D365 FINANCE", desc: "Transition legacy, customized AX 2009 systems into a streamlined, cloud Dynamics 365 platform without business disruption." },
+  { title: "AX 2012 CLOUD TRANSITION", desc: "Eliminate costly on-premises server infrastructure and modernize AX 2012 to Dynamics 365 Cloud Finance & Supply Chain." },
+  { title: "DYNAMICS GP TO ENTERPRISE D365", desc: "Scale beyond GP limits when entity growth, transaction volume, or reporting complexity require enterprise-grade Dynamics 365." },
+  { title: "LEGACY ON-PREM TO CLOUD ERP", desc: "Remove hardware overhead, VPN dependencies, and version lock with modern cloud Dynamics 365 architecture." }
 ];
 
 const industries = [
-  { title: "MANUFACTURING & PRODUCTION", desc: "Accelerate inventory posting speed, simplify complex Bills of Materials (BOM), and gain real-time production cost visibility." },
+  { title: "MANUFACTURING & PRODUCTION", desc: "Accelerate inventory posting, simplify complex Bills of Materials, and gain real-time production cost visibility." },
   { title: "DISTRIBUTION & SUPPLY CHAIN", desc: "Eliminate cash flow bottlenecks, automate inventory tracking, and synchronize multi-location warehouse operations." },
-  { title: "PROFESSIONAL & PROJECT SERVICES", desc: "Unify project accounting, flat-fee billing, contractor management, and real-time profitability tracking." },
-  { title: "FIELD SERVICE & OPERATIONS", desc: "Streamline high-volume work orders, field dispatching, and mobile service invoicing for maximum ROI." }
+  { title: "PROFESSIONAL & PROJECT SERVICES", desc: "Unify project accounting, billing, contractor management, and real-time profitability tracking." },
+  { title: "FIELD SERVICE & OPERATIONS", desc: "Streamline high-volume work orders, field dispatching, and mobile service invoicing." }
 ];
 
-const axioStats = [
-  { value: "67%", label: "Lower total cost of implementation vs traditional ERP consultants" },
-  { value: "50%", label: "Faster time-to-value deployment schedule" },
-  { value: "95%", label: "Proven project implementation success rate" },
-  { value: "30%+", label: "Reduction in long-term Total Cost of Ownership (TCO)" }
+const resultsStats = [
+  { value: "67%", label: "Lower implementation cost vs traditional consultants" },
+  { value: "50%", label: "Faster time-to-value on deployment" },
+  { value: "95%", label: "Proven project success rate" },
+  { value: "30%+", label: "Reduction in long-term Total Cost of Ownership" }
 ];
 ---
 
 <BaseLayout
-  title="Dynamics 365 Finance Partner | Improved365 ERP Modernization"
-  description="Microsoft US Partner of the Year & 30x Inner Circle Elite Partner. Transform enterprise finance with Microsoft Dynamics 365 Finance & Improved365 Accelerated Solutions."
+  title="Microsoft Dynamics 365 Partner | Implement, Customize, Integrate | Improved365"
+  description="Helping businesses get more from Microsoft Dynamics 365. 20+ years across Dynamics AX and Dynamics 365. Implement, customize, integrate, optimize, and support Finance & Operations and Customer Engagement."
   canonical="https://improved365.com"
   type="home"
   faqs={faqs}
 >
   <!-- Hero Section -->
-  <section id="d365-finance" class="bg-slate-950 text-white py-20 md:py-28 border-b border-slate-800 relative overflow-hidden">
+  <section id="home" class="bg-slate-950 text-white py-20 md:py-28 border-b border-slate-800 relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-slate-950 pointer-events-none"></div>
     <div class="max-w-screen-xl mx-auto px-4 md:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <!-- Text Column -->
         <div class="lg:col-span-7">
           <div class="inline-flex items-center gap-2 bg-blue-900/60 border border-blue-500/30 text-blue-300 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-            🏆 MICROSOFT US PARTNER OF THE YEAR — 30x MICROSOFT INNER CIRCLE
+            MICROSOFT US PARTNER OF THE YEAR — 30x MICROSOFT INNER CIRCLE
           </div>
           <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
-            ENTERPRISE DYNAMICS 365 FINANCE <span class="text-blue-500">MODERNIZATION AT SCALE</span>
+            HELPING BUSINESSES GET MORE FROM <span class="text-blue-500">MICROSOFT DYNAMICS 365</span>
           </h1>
-          <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-8">
-            Your ERP should accelerate growth—not delay month-end close, create forecast variances, or derail your AI strategy. Improved365 delivers AI-powered Microsoft Dynamics 365 Finance solutions designed for scaling enterprises ready to replace legacy technical debt with intelligent financial operations.
+          <p class="text-lg md:text-xl text-slate-300 leading-relaxed mb-4">
+            We help organizations implement, customize, integrate, and optimize Microsoft Dynamics 365 so their technology works better for the business.
+          </p>
+          <p class="text-base text-slate-400 leading-relaxed mb-8">
+            With more than 20 years across Microsoft Dynamics AX and Dynamics 365, our team combines deep technical expertise with practical business knowledge — improving processes, connecting systems, automating repetitive work, and building solutions that scale as you grow.
           </p>
 
-          <!-- Top Stats Banner -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-slate-800 pt-6">
             {stats.map((stat) => (
               <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
@@ -120,13 +160,12 @@ const axioStats = [
           </div>
         </div>
 
-        <!-- Form Column -->
         <div id="demo-form" class="lg:col-span-5">
           <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl relative">
-            <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">LIVE ARCHITECT SESSION</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">SOLUTIONS CONVERSATION</span>
             <h2 class="text-2xl font-extrabold text-white mb-2">SCHEDULE YOUR DEMO</h2>
             <p class="text-xs text-slate-400 mb-6 leading-relaxed">
-              A tailored walkthrough of Dynamics 365 Finance focused on your business goals, system landscape, and growth requirements.
+              A walkthrough focused on your Dynamics 365 goals — implementation, upgrade, integration, or getting more from what you already run.
             </p>
 
             <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for scheduling a demo. An Improved365 solutions architect will reach out shortly.');">
@@ -165,7 +204,7 @@ const axioStats = [
     </div>
   </section>
 
-  <!-- Trusted Logos Section -->
+  <!-- Trusted Logos -->
   <section class="py-10 bg-slate-900 border-b border-slate-800">
     <div class="max-w-screen-xl mx-auto px-4 text-center">
       <p class="text-xs font-bold text-slate-400 tracking-widest uppercase mb-6">TRUSTED BY MID-MARKET AND ENTERPRISE INDUSTRY LEADERS</p>
@@ -177,23 +216,71 @@ const axioStats = [
     </div>
   </section>
 
-  <!-- The Problem Section -->
-  <section id="the-problem" class="py-20 bg-white border-b border-gray-100">
+  <!-- How We Help -->
+  <section id="how-we-help" class="py-20 bg-white border-b border-gray-100">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="max-w-3xl mb-12">
-        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">THE ERP CHALLENGE</span>
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">WHAT WE DO</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">
-          THE OPERATIONAL COST OF AGING FINANCE SYSTEMS.
+          IMPLEMENT. CUSTOMIZE. INTEGRATE. OPTIMIZE.
         </h2>
-        <p class="text-slate-600 leading-relaxed text-base mb-4">
-          Most ERP modernizations are triggered by a critical bottleneck: compliance audits demanding unavailable controls, delayed financial consolidation after an acquisition, or month-end reporting requiring days of manual spreadsheet reconciliation.
-        </p>
         <p class="text-slate-600 leading-relaxed text-base">
-          Relying on manual data stitching creates systemic friction. Improved365 benchmark research indicates that enterprise finance teams lose critical strategic velocity when constrained by disconnected, pre-modern legacy infrastructure.
+          Whether you are implementing Dynamics 365, upgrading an existing environment, integrating multiple systems, or looking to get more value from your current platform — we turn business requirements into reliable, scalable solutions.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {howWeHelp.map((item) => (
+          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+            <h3 class="text-sm font-bold text-blue-600 mb-2 uppercase tracking-wide">{item.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise -->
+  <section id="expertise" class="py-20 bg-slate-50 border-b border-gray-200">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">OUR EXPERTISE</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+          FULL-STACK DYNAMICS 365 CAPABILITY
+        </h2>
+        <p class="text-slate-600 text-base mt-4">
+          Technical depth across the Microsoft Dynamics stack — from finance and CRM to integration, data, and cloud operations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {expertise.map((item) => (
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide text-blue-600">{item.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section id="the-problem" class="py-20 bg-white border-b border-gray-100">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="max-w-3xl mb-12">
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">THE CHALLENGE</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">
+          WHEN DYNAMICS 365 ISN'T WORKING HARD ENOUGH FOR THE BUSINESS.
+        </h2>
+        <p class="text-slate-600 leading-relaxed text-base mb-4">
+          Most modernization work starts with a real bottleneck: slow month-end close, systems that do not talk to each other, manual spreadsheets holding the process together, or an aging AX/GP environment past its useful life.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-base">
+          Improved365 benchmark research shows enterprise teams lose strategic velocity when constrained by disconnected systems and unfinished Dynamics deployments.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {problemStats.map((item) => (
           <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between">
             <span class="text-4xl font-extrabold text-blue-600 mb-4 block">{item.value}</span>
@@ -205,7 +292,7 @@ const axioStats = [
     </div>
   </section>
 
-  <!-- Demo Agenda Section -->
+  <!-- Demo Agenda -->
   <section id="demo-agenda" class="py-20 bg-slate-900 text-white border-b border-slate-800">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -214,7 +301,7 @@ const axioStats = [
           WHAT YOUR DEMO SESSION INCLUDES
         </h2>
         <p class="text-slate-400 text-base mt-4">
-          An interactive, hands-on session led by an Improved365 Microsoft Certified Solutions Architect tailored to your corporate structure and workflows.
+          A practical session led by an Improved365 solutions architect — tailored to your systems, processes, and goals.
         </p>
       </div>
 
@@ -232,45 +319,16 @@ const axioStats = [
     </div>
   </section>
 
-  <!-- AI Readiness Section -->
-  <section id="ai-readiness" class="py-20 bg-white border-b border-gray-100">
-    <div class="max-w-screen-xl mx-auto px-4 md:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">AI & AUTOMATION READINESS</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-            BUILDING AN AI-READY FINANCIAL FOUNDATION
-          </h2>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            While two-thirds of enterprise leaders are actively piloting AI, under 10% possess clean, unified data infrastructure.
-          </p>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
-            Microsoft Dynamics 365 Finance provides the structured, real-time data layer required for Microsoft Copilot, Fabric analytics, and intelligent automation to deliver quantifiable business value.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4">
-          {aiStats.map((stat) => (
-            <div class="p-6 bg-slate-900 text-white rounded-2xl border border-slate-800">
-              <span class="block text-3xl font-extrabold text-blue-400 mb-2">{stat.value}</span>
-              <p class="text-xs text-slate-300 leading-relaxed">{stat.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Migration Paths -->
   <section id="migration-paths" class="py-20 bg-slate-50 border-b border-gray-200">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">MIGRATION & MODERNIZATION</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
-          PROVEN TRANSFORMATION PATHWAYS
+          PROVEN TRANSITION PATHWAYS
         </h2>
         <p class="text-slate-600 text-base mt-4">
-          Improved365 specializes in seamless cloud transitions from legacy Microsoft Dynamics platforms and legacy ERP systems.
+          Seamless cloud transitions from legacy Microsoft Dynamics platforms and on-prem ERP — built on 20+ years of AX and Dynamics 365 experience.
         </p>
       </div>
 
@@ -287,21 +345,21 @@ const axioStats = [
     </div>
   </section>
 
-  <!-- AXIO Core Financials -->
-  <section id="axio-core" class="py-20 bg-slate-950 text-white border-b border-slate-800">
+  <!-- Results -->
+  <section id="results" class="py-20 bg-slate-950 text-white border-b border-slate-800">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="max-w-3xl mx-auto text-center mb-16">
-        <span class="text-blue-400 font-bold text-xs tracking-widest uppercase block mb-2">RAPID DEPLOYMENT FRAMEWORK</span>
+        <span class="text-blue-400 font-bold text-xs tracking-widest uppercase block mb-2">PROVEN OUTCOMES</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">
-          ACCELERATED ERP IMPLEMENTATION ENGINE
+          DYNAMICS 365 THAT WORKS BETTER FOR THE BUSINESS
         </h2>
         <p class="text-slate-300 text-base leading-relaxed">
-          Skip months of repetitive discovery workshops. Improved365 deploys pre-configured enterprise financial models, industry accelerators, and automated data migration pipelines.
+          Pre-configured models, industry accelerators, and automated migration pipelines — so you skip months of repetitive discovery and reach value faster.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {axioStats.map((stat) => (
+        {resultsStats.map((stat) => (
           <div class="p-8 bg-slate-900 rounded-2xl border border-slate-800 text-center">
             <span class="block text-4xl font-extrabold text-blue-400 mb-2">{stat.value}</span>
             <p class="text-xs text-slate-300 font-semibold">{stat.label}</p>
@@ -311,13 +369,13 @@ const axioStats = [
     </div>
   </section>
 
-  <!-- Industries Section -->
+  <!-- Industries -->
   <section id="industries" class="py-20 bg-white border-b border-gray-100">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">INDUSTRY EXCELLENCE</span>
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">INDUSTRIES</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
-          TAILORED FOR COMPLEX ENTERPRISE SECTORS
+          BUILT FOR COMPLEX OPERATIONAL BUSINESSES
         </h2>
       </div>
 
@@ -332,11 +390,11 @@ const axioStats = [
     </div>
   </section>
 
-  <!-- FAQs Section -->
+  <!-- FAQs -->
   <section id="faq" class="py-20 bg-slate-50">
     <div class="max-w-screen-lg mx-auto px-4 md:px-8">
       <div class="text-center mb-12">
-        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">DYNAMICS 365 FINANCE KNOWLEDGE BASE</span>
+        <span class="text-blue-600 font-bold text-xs tracking-widest uppercase block mb-2">KNOWLEDGE BASE</span>
         <h2 class="text-3xl font-extrabold text-slate-900">
           FREQUENTLY ASKED QUESTIONS
         </h2>
@@ -346,28 +404,28 @@ const axioStats = [
         {faqs.map((faq) => (
           <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
             <h3 class="text-base font-bold text-slate-900 mb-2">{faq.question}</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">{faq.answer}</p>
+            <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Final CTA Banner -->
+  <!-- Final CTA -->
   <section class="bg-blue-600 text-white py-16">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8 text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
-        READY TO ACCELERATE YOUR ERP MODERNIZATION?
+        READY TO GET MORE FROM DYNAMICS 365?
       </h2>
       <p class="text-blue-100 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-        Download the executive guide to enterprise cloud financial modernization for CFOs, COOs, and IT leaders.
+        Talk with an Improved365 solutions architect about implementation, upgrade, integration, or optimization — and leave with a clear next step.
       </p>
       <a
         href="#demo-form"
         class="inline-flex items-center bg-slate-950 text-white hover:bg-slate-900 font-bold text-sm px-8 py-4 rounded-xl shadow-lg transition-all gap-2"
       >
-        <span>DOWNLOAD THE FREE GUIDE</span>
-        <svg class="size-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+        <span>SCHEDULE YOUR DEMO</span>
+        <svg class="size-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
       </a>
     </div>
   </section>
