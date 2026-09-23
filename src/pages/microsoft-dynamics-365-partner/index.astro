@@ -1,58 +1,18 @@
 ---
-import ServiceLayout from "@/layouts/ServiceLayout.astro";
-
-const faqs = [
-  {
-    question: "Why choose Improved365 as your Microsoft Dynamics 365 partner?",
-    answer: "20+ years across Dynamics AX and Dynamics 365, Microsoft US Partner of the Year credentials, 30x Inner Circle recognition, and a practice focused on implement, customize, integrate, optimize, and support — not resale alone."
-  },
-  {
-    question: "Do you support both Finance & Operations and CRM?",
-    answer: "Yes. Dynamics 365 Finance & Operations (implementation, configuration, customization, development, support) and Dynamics 365 Customer Engagement/CRM (development, customization, integration), plus automation, data & reporting, and Azure/DevOps."
-  },
-  {
-    question: "Can you support an existing Dynamics 365 environment?",
-    answer: "Yes. Many clients come to us to optimize what they already run — performance, integrations, reporting, technical debt cleanup, and ongoing support as the business grows."
-  }
-];
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<ServiceLayout
-  title="Microsoft Dynamics 365 Partner | Improved365"
-  description="Microsoft Dynamics 365 partner helping businesses implement, customize, integrate, and optimize D365. 20+ years AX & D365. Microsoft US Partner of the Year."
+<BaseLayout
+  title="Improved365"
+  description="Dynamics 365 Finance & Operations and Dynamics AX 2012 upgrade expertise."
   canonical="https://improved365.com/microsoft-dynamics-365-partner/"
-  badge="MICROSOFT DYNAMICS 365 PARTNER"
-  h1="MICROSOFT DYNAMICS 365 PARTNER"
-  intro="Helping businesses get more from Microsoft Dynamics 365. Improved365 is the partner for organizations that need deep technical and functional expertise — not a slide deck and a handoff."
-  bullets={[
-    "Implement · Customize · Integrate · Optimize · Support",
-    "Finance & Operations and Customer Engagement/CRM",
-    "Microsoft US Partner of the Year · 30x Inner Circle Elite Partner",
-    "20+ years across Dynamics AX and Dynamics 365"
-  ]}
-  sections={[
-    {
-      title: "A partner that owns outcomes",
-      body: "We turn business requirements into reliable, scalable Dynamics 365 solutions — whether you are going live for the first time, upgrading legacy AX or GP, or extracting more value from what you already run."
-    },
-    {
-      title: "Full stack across the Microsoft Dynamics platform",
-      body: "Finance & Operations, Customer Engagement, business process automation, system integration, SQL/SSRS/dashboards, and Azure environments with deployment pipelines and monitoring."
-    },
-    {
-      title: "Built for complex operational businesses",
-      body: "Manufacturing, distribution & supply chain, professional & project services, and field service — industries where process depth and multi-entity reality matter."
-    },
-    {
-      title: "Credentials that are proof, not fluff",
-      body: "95% project success rate, up to 50% faster time-to-value, 30%+ TCO reduction, and Microsoft recognition at the highest partner tier."
-    }
-  ]}
-  faqs={faqs}
-  related={[
-    { href: "/dynamics-365-implementation-partner/", label: "Implementation Partner" },
-    { href: "/dynamics-365-consultant/", label: "Dynamics 365 Consultant" },
-    { href: "/ax-2012-to-dynamics-365/", label: "AX 2012 to D365" },
-    { href: "/dynamics-gp-to-dynamics-365/", label: "GP to D365" }
-  ]}
-/>
+  noindex={true}
+>
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <p class="text-slate-600 mb-6">This page has moved.</p>
+      <a class="inline-flex bg-blue-600 text-white font-bold px-6 py-3 rounded-lg" href="/dynamics-365-implementation-partner/">View Dynamics 365 Finance & Operations implementation</a>
+    </div>
+  </section>
+  <script is:inline>window.location.replace('/dynamics-365-implementation-partner/');</script>
+</BaseLayout>
