@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enfermerausa.com/sitemap-index.xml
+Sitemap: https://improved365.com/sitemap-index.xml
