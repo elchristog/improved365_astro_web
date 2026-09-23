@@ -10,8 +10,8 @@ interface Props {
 
 const {
   type = 'home',
-  title = 'Microsoft Dynamics 365 Partner | Improved365',
-  description = 'Helping businesses get more from Microsoft Dynamics 365 — implement, customize, integrate, optimize, and support. 20+ years across Dynamics AX and Dynamics 365.',
+  title = 'Dynamics 365 Finance & Operations | AX 2012 Upgrade Experts | Improved365',
+  description = 'Helping businesses get more from Microsoft Dynamics 365 Finance & Operations. Upgrade experts from Dynamics AX 2012 to D365 F&O.',
   url = 'https://improved365.com/',
   faqs = [],
   datePublished = '2026-01-01'
@@ -27,11 +27,9 @@ const organizationSchema = {
   "description": description,
   "areaServed": "US",
   "knowsAbout": [
-    "Microsoft Dynamics 365",
-    "Dynamics 365 Finance & Operations",
-    "Dynamics 365 Customer Engagement",
-    "Dynamics AX migration",
-    "Dynamics GP migration",
+    "Microsoft Dynamics 365 Finance & Operations",
+    "Dynamics AX 2012",
+    "Dynamics AX 2012 to Dynamics 365 Finance & Operations upgrade",
     "ERP modernization",
     "System integration",
     "Business process automation",
@@ -47,25 +45,17 @@ const professionalServiceSchema = {
   "image": "https://improved365.com/improved_365_logo.webp",
   "description": description,
   "priceRange": "$$$$",
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
-  },
+  "areaServed": { "@type": "Country", "name": "United States" },
   "serviceType": [
-    "Dynamics 365 implementation",
-    "Dynamics 365 customization",
-    "Dynamics 365 integration",
-    "Dynamics 365 optimization",
-    "Dynamics 365 support",
-    "ERP modernization",
-    "AX to Dynamics 365 migration",
-    "GP to Dynamics 365 migration"
+    "Dynamics 365 Finance & Operations implementation",
+    "Dynamics 365 Finance & Operations customization",
+    "Dynamics 365 Finance & Operations integration",
+    "Dynamics 365 Finance & Operations optimization",
+    "Dynamics 365 Finance & Operations support",
+    "Dynamics AX 2012 to Dynamics 365 Finance & Operations upgrade",
+    "ERP modernization"
   ],
-  "provider": {
-    "@type": "Organization",
-    "name": "Improved365",
-    "url": "https://improved365.com"
-  }
+  "provider": { "@type": "Organization", "name": "Improved365", "url": "https://improved365.com" }
 };
 
 const faqSchema = faqs.length > 0 ? {
@@ -74,10 +64,7 @@ const faqSchema = faqs.length > 0 ? {
   "mainEntity": faqs.map(faq => ({
     "@type": "Question",
     "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
   }))
 } : null;
 
@@ -88,17 +75,11 @@ const articleSchema = type === 'article' ? {
   "description": description,
   "mainEntityOfPage": url,
   "datePublished": datePublished,
-  "author": {
-    "@type": "Organization",
-    "name": "Improved365"
-  },
+  "author": { "@type": "Organization", "name": "Improved365" },
   "publisher": {
     "@type": "Organization",
     "name": "Improved365",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://improved365.com/improved_365_logo.webp"
-    }
+    "logo": { "@type": "ImageObject", "url": "https://improved365.com/improved_365_logo.webp" }
   }
 } : null;
 
@@ -108,11 +89,7 @@ const servicePageSchema = type === 'service' ? {
   "name": title,
   "description": description,
   "url": url,
-  "provider": {
-    "@type": "Organization",
-    "name": "Improved365",
-    "url": "https://improved365.com"
-  },
+  "provider": { "@type": "Organization", "name": "Improved365", "url": "https://improved365.com" },
   "areaServed": "US",
   "serviceType": title
 } : null;
