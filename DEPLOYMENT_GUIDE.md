@@ -63,14 +63,22 @@ Este documento detalla la arquitectura y el procedimiento paso a paso implementa
    ```
 
 ### Paso B: Configuración de DNS en Cloudflare
+
+> ⚠️ **ATENCIÓN (Evitar Error 522 Connection Timed Out):** 
+> NO utilices registros de tipo `A` apuntando a IPs individuales de GCP para publicar un Bucket de Cloud Storage estático. Debes usar registros **CNAME** hacia `c.storage.googleapis.com`.
+
 En el panel de **Cloudflare** para `improved365.com`:
 
-| Tipo | Nombre | Destino | Estado Proxy |
+1. **Eliminar** cualquier registro de tipo `A` existente para `improved365.com` o `www.improved365.com`.
+2. **Crear** los siguientes registros `CNAME`:
+
+| Tipo | Nombre | Destino / Contenido | Estado Proxy |
 | :--- | :--- | :--- | :--- |
-| **CNAME** | `@` | `c.storage.googleapis.com` | 🟠 Proxied |
+| **CNAME** | `@` (o `improved365.com`) | `c.storage.googleapis.com` | 🟠 Proxied |
 | **CNAME** | `www` | `c.storage.googleapis.com` | 🟠 Proxied |
 
-- En **SSL/TLS**, asegurar que la encriptación esté configurada en **Full** o **Flexible**.
+3. En **SSL/TLS** de Cloudflare, asegurar que la encriptación esté configurada en **Flexible** o **Full**.
+4. Verificar que el Bucket en GCP tenga el nombre exacto `improved365.com` y esté poblado con los archivos compilados (`index.html`).
 
 ---
 
