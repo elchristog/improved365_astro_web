@@ -10,36 +10,61 @@ interface Props {
 
 const {
   type = 'home',
-  title = 'Enfermera en Estados Unidos - Agencia de Reclutamiento para Enfermeros Hispanos',
-  description = 'Agencia líder en homologación de título de enfermería, preparación NCLEX, visa EB-3 y patrocinio en EE.UU.',
-  url = 'https://enfermerausa.com',
+  title = 'Microsoft Dynamics 365 Partner | Improved365',
+  description = 'Helping businesses get more from Microsoft Dynamics 365 — implement, customize, integrate, optimize, and support. 20+ years across Dynamics AX and Dynamics 365.',
+  url = 'https://improved365.com/',
   faqs = [],
   datePublished = '2026-01-01'
 } = Astro.props;
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "EducationalOccupationalProgram",
-  "name": "Programa de Homologación y Empleo para Enfermeras en EE.UU.",
+  "@type": "Organization",
+  "name": "Improved365",
+  "url": "https://improved365.com",
+  "logo": "https://improved365.com/improved_365_logo.webp",
+  "email": "contact@improved365.com",
   "description": description,
+  "areaServed": "US",
+  "knowsAbout": [
+    "Microsoft Dynamics 365",
+    "Dynamics 365 Finance & Operations",
+    "Dynamics 365 Customer Engagement",
+    "Dynamics AX migration",
+    "Dynamics GP migration",
+    "ERP modernization",
+    "System integration",
+    "Business process automation",
+    "Azure DevOps"
+  ]
+};
+
+const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Improved365",
+  "url": url || "https://improved365.com",
+  "image": "https://improved365.com/improved_365_logo.webp",
+  "description": description,
+  "priceRange": "$$$$",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "serviceType": [
+    "Dynamics 365 implementation",
+    "Dynamics 365 customization",
+    "Dynamics 365 integration",
+    "Dynamics 365 optimization",
+    "Dynamics 365 support",
+    "ERP modernization",
+    "AX to Dynamics 365 migration",
+    "GP to Dynamics 365 migration"
+  ],
   "provider": {
     "@type": "Organization",
-    "name": "Enfermera en Estados Unidos",
-    "url": "https://enfermerausa.com",
-    "logo": "https://enfermerausa.com/logo.webp",
-    "email": "hello@enfermeraenestadosunidos.com",
-    "sameAs": [
-      "https://www.instagram.com/enfermeraenestadosunidos",
-      "https://www.facebook.com/enfermeraenestadosunidosusa",
-      "https://www.youtube.com/@enfermeraenestadosunidos",
-      "https://www.tiktok.com/@enfermeraenestadosunidos"
-    ]
-  },
-  "occupationalCategory": "Registered Nurse (RN)",
-  "educationalProgramMode": "online",
-  "offers": {
-    "@type": "Offer",
-    "category": "Asesoría de Homologación y Visados"
+    "name": "Improved365",
+    "url": "https://improved365.com"
   }
 };
 
@@ -65,19 +90,36 @@ const articleSchema = type === 'article' ? {
   "datePublished": datePublished,
   "author": {
     "@type": "Organization",
-    "name": "Enfermera en Estados Unidos"
+    "name": "Improved365"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Enfermera en Estados Unidos",
+    "name": "Improved365",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://enfermerausa.com/logo.webp"
+      "url": "https://improved365.com/improved_365_logo.webp"
     }
   }
+} : null;
+
+const servicePageSchema = type === 'service' ? {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": title,
+  "description": description,
+  "url": url,
+  "provider": {
+    "@type": "Organization",
+    "name": "Improved365",
+    "url": "https://improved365.com"
+  },
+  "areaServed": "US",
+  "serviceType": title
 } : null;
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(professionalServiceSchema)} />
 {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}
+{servicePageSchema && <script type="application/ld+json" set:html={JSON.stringify(servicePageSchema)} />}
