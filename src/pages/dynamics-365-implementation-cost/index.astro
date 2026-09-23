@@ -1,0 +1,58 @@
+---
+import ServiceLayout from "@/layouts/ServiceLayout.astro";
+
+const faqs = [
+  {
+    question: "How much does a Dynamics 365 implementation cost?",
+    answer: "Total cost has three parts: Microsoft licensing, implementation services, and internal change effort. Services cost depends on scope — modules, entities, data migration, integrations, and customizations. Improved365 reduces services spend with accelerators; many clients see up to 67% lower implementation cost vs traditional consultants."
+  },
+  {
+    question: "What drives cost up on Dynamics 365 projects?",
+    answer: "Uncontrolled customizations, poor data quality, many point-to-point integrations, unclear process ownership, and starting from a blank configuration every time. Pre-configured workflows and a firm scope gate keep cost predictable."
+  },
+  {
+    question: "Is licensing separate from partner fees?",
+    answer: "Yes. Microsoft licenses Dynamics 365; your partner delivers implementation and support. We help you right-size licenses so you are not over-buying seats or modules you will not use in phase one."
+  }
+];
+---
+
+<ServiceLayout
+  title="Dynamics 365 Implementation Cost | What to Budget | Improved365"
+  description="What Dynamics 365 implementation really costs — licensing vs services, cost drivers, and how Improved365 cuts services spend up to 67% with accelerators. Get a scoped estimate."
+  canonical="https://improved365.com/dynamics-365-implementation-cost/"
+  badge="COST & BUDGETING"
+  h1="DYNAMICS 365 IMPLEMENTATION COST"
+  intro="Budget Dynamics 365 with eyes open: Microsoft licensing is predictable; implementation cost is where projects slip. Here is how cost breaks down — and how Improved365 keeps services spend under control."
+  bullets={[
+    "Separate licensing, services, and internal change cost",
+    "Up to 67% lower implementation cost vs traditional consultants",
+    "40+ pre-configured workflows cut discovery and build hours",
+    "Scoped estimate after a solutions conversation — no blank-check SOWs"
+  ]}
+  sections={[
+    {
+      title: "The three cost buckets",
+      body: "(1) Microsoft licenses — per user/app, relatively fixed once you choose the workload mix. (2) Implementation services — partner configuration, data, integrations, testing, training. (3) Internal cost — your SMEs, UAT, and change management. Most surprises live in bucket two and three."
+    },
+    {
+      title: "What moves the services number",
+      body: "Number of legal entities, countries and currencies, modules in scope, data volume and quality, integration count, and how much you customize versus configure. Multi-entity global finance costs more than a single-entity core GL/AP/AR start."
+    },
+    {
+      title: "How Improved365 lowers cost without cutting corners",
+      body: "Accelerators and 40+ pre-configured financial workflows replace months of greenfield design. Automated migration tools reduce data project hours. A 95% success rate means fewer rework cycles that blow budgets."
+    },
+    {
+      title: "TCO after go-live",
+      body: "Clients typically see 30%+ lower long-term TCO versus legacy on-prem stacks — less hardware, fewer brittle customizations, and cloud release cadence instead of multi-year upgrade projects."
+    }
+  ]}
+  faqs={faqs}
+  related={[
+    { href: "/dynamics-365-implementation-partner/", label: "Implementation Partner" },
+    { href: "/erp-modernization/", label: "ERP Modernization" },
+    { href: "/dynamics-365-consultant/", label: "Dynamics 365 Consultant" },
+    { href: "/microsoft-dynamics-365-partner/", label: "Dynamics 365 Partner" }
+  ]}
+/>
