@@ -1,0 +1,42 @@
+name: Deploy Astro Web to Google Cloud Storage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Sync build files to Google Cloud Storage
+        run: |
+          gcloud storage rsync -r -d dist/ gs://improved365.com
+
+      - name: Set web configuration and caching
+        run: |
+          gcloud storage buckets update gs://improved365.com --web-main-page-suffix=index.html --web-error-page=404.html
