@@ -1,58 +1,18 @@
 ---
-import ServiceLayout from "@/layouts/ServiceLayout.astro";
-
-const faqs = [
-  {
-    question: "When should we leave Dynamics GP for Dynamics 365?",
-    answer: "When entity count, transaction volume, multi-currency needs, or reporting complexity outgrow GP — or when you need cloud ERP, stronger multi-entity consolidation, and a platform that Microsoft is actively advancing."
-  },
-  {
-    question: "Can we migrate GP data cleanly?",
-    answer: "Yes. Chart of accounts, open transactions, and master data move with a planned migration. We clean and map before load so D365 does not inherit years of GP workarounds."
-  },
-  {
-    question: "Is Dynamics 365 overkill if we are mid-market?",
-    answer: "Not if you are already hitting GP ceilings. Phased D365 Finance deployments start with core financials and grow — you do not have to buy the entire enterprise footprint on day one."
-  }
-];
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<ServiceLayout
-  title="Dynamics GP to Dynamics 365 Migration | Improved365"
-  description="Migrate Dynamics GP to enterprise Dynamics 365. Scale beyond GP limits for multi-entity, volume, and reporting. Proven partner with 20+ years Microsoft Dynamics."
+<BaseLayout
+  title="Improved365"
+  description="Dynamics 365 Finance & Operations and Dynamics AX 2012 upgrade expertise."
   canonical="https://improved365.com/dynamics-gp-to-dynamics-365/"
-  badge="DYNAMICS GP MIGRATION"
-  h1="DYNAMICS GP TO DYNAMICS 365"
-  intro="Dynamics GP served well until growth, entities, or reporting outpaced it. Improved365 moves mid-market and multi-entity organizations from GP to enterprise Dynamics 365 — with a scoped path, not a rip-and-replace scare."
-  bullets={[
-    "GP → enterprise Dynamics 365 Finance",
-    "Multi-entity, multi-currency, higher volume ready",
-    "Data migration and process redesign in one program",
-    "Microsoft US Partner of the Year · 30x Inner Circle"
-  ]}
-  sections={[
-    {
-      title: "The GP ceiling is real",
-      body: "More legal entities, heavier consolidations, inventory complexity, or audit demands eventually exceed what GP was built to carry. Stretching it with spreadsheets is the expensive option."
-    },
-    {
-      title: "What changes on Dynamics 365",
-      body: "Unified multi-entity finance, stronger inventory and supply chain options, cloud operations, and reporting that does not depend on a heroic month-end export."
-    },
-    {
-      title: "Migration without losing the business",
-      body: "We map GP processes to D365 standard first, migrate masters and opens cleanly, and train teams on the new close — so day-two operations are stronger than day-before GP."
-    },
-    {
-      title: "Cost discipline",
-      body: "Accelerators and clear phase gates keep services cost controlled. Many clients see up to 67% lower implementation cost vs traditional consultants, with core modules live in as few as 6 months."
-    }
-  ]}
-  faqs={faqs}
-  related={[
-    { href: "/ax-2012-to-dynamics-365/", label: "AX 2012 to D365" },
-    { href: "/erp-modernization/", label: "ERP Modernization" },
-    { href: "/dynamics-365-implementation-partner/", label: "Implementation Partner" },
-    { href: "/microsoft-dynamics-365-partner/", label: "Dynamics 365 Partner" }
-  ]}
-/>
+  noindex={true}
+>
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <p class="text-slate-600 mb-6">This page has moved.</p>
+      <a class="inline-flex bg-blue-600 text-white font-bold px-6 py-3 rounded-lg" href="/ax-2012-to-dynamics-365/">View Dynamics AX 2012 to D365 Finance & Operations upgrades</a>
+    </div>
+  </section>
+  <script is:inline>window.location.replace('/ax-2012-to-dynamics-365/');</script>
+</BaseLayout>
