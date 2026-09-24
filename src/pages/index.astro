@@ -16,8 +16,8 @@ const faqs = [
     answer: "Yes. That is a core focus. We plan and deliver upgrades from Dynamics AX 2012 to Dynamics 365 Finance & Operations — inventorying customizations, migrating data, retiring technical debt, and landing on clean F&O configuration without unnecessary disruption."
   },
   {
-    question: "Do you implement Dynamics 365 CRM / Customer Engagement?",
-    answer: "No. Our practice is Dynamics 365 Finance & Operations and Dynamics AX 2012 upgrades to F&O — finance, supply chain, and related operations — not CRM."
+    question: "What happens in the first conversation?",
+    answer: "We do not run a product demo. We assess the limitations in your current Dynamics AX 2012 or Dynamics 365 Finance & Operations setup, where value is leaking, and how to get more from the platform while reducing opportunity cost."
   },
   {
     question: "Can you integrate Dynamics 365 Finance & Operations with our other systems?",
@@ -32,7 +32,7 @@ const faqs = [
 const stats = [
   { value: "20+", label: "Years across Dynamics AX 2012 and D365 Finance & Operations" },
   { value: "AX 2012", label: "Upgrade experts to Dynamics 365 Finance & Operations" },
-  { value: "F&O", label: "Focused on Finance & Operations — not CRM" }
+  { value: "F&O", label: "Focused on Dynamics 365 Finance & Operations" }
 ];
 
 const problemStats = [
@@ -92,14 +92,13 @@ const howWeHelp = [
   }
 ];
 
-const demoAgendaItems = [
-  { title: "CURRENT STATE & GOALS", desc: "Map your finance and operations requirements, system landscape, and growth priorities — including whether you are on Dynamics AX 2012 today." },
-  { title: "DYNAMICS 365 FINANCE & OPERATIONS WALKTHROUGH", desc: "See how Dynamics 365 Finance & Operations supports GL, AP/AR, inventory, supply chain, and multi-entity operations end to end." },
-  { title: "AX 2012 UPGRADE PATH", desc: "If you run Dynamics AX 2012 — a clear upgrade path to Dynamics 365 Finance & Operations: customizations, data, cutover, and risk." },
-  { title: "INTEGRATION & AUTOMATION", desc: "Identify where connections and workflow automation on Dynamics 365 Finance & Operations remove manual effort and data re-entry." },
-  { title: "DATA, REPORTING & ANALYTICS", desc: "Turn Dynamics 365 Finance & Operations transactional data into dashboards and reports leaders use for close, cash, and operations." },
-  { title: "CLOUD, DEVOPS & SUPPORT", desc: "Cover Azure environments, deployment pipelines, monitoring, and how ongoing support keeps Dynamics 365 Finance & Operations healthy." },
-  { title: "SCOPE & TIMELINE", desc: "Leave with a practical scope outline, rough timeline, and recommended path to value on Dynamics 365 Finance & Operations." }
+const conversationItems = [
+  { title: "CURRENT LIMITATIONS", desc: "Where Dynamics AX 2012 or Dynamics 365 Finance & Operations is holding the business back — close, data, customizations, integrations, or cost of delay." },
+  { title: "VALUE & OPPORTUNITY COST", desc: "What you are leaving on the table today, and what getting more from Finance & Operations is worth versus staying put." },
+  { title: "AX 2012 UPGRADE FIT", desc: "If you run Dynamics AX 2012 — whether an upgrade to Dynamics 365 Finance & Operations is the right path, and what risk looks like." },
+  { title: "PROCESS & INTEGRATION GAPS", desc: "Manual handoffs, spreadsheet workarounds, and systems that should connect to Dynamics 365 Finance & Operations but do not." },
+  { title: "REPORTING & DECISIONS", desc: "Whether leaders can trust F&O data for close, cash, and operations — and what it takes to get there." },
+  { title: "PRACTICAL NEXT STEP", desc: "Leave with a clear recommendation: optimize what you have, upgrade from AX 2012, or scope a focused F&O improvement — not a canned product tour." }
 ];
 
 const migrationPaths = [
@@ -179,9 +178,9 @@ const industries = [
         <div id="demo-form" class="lg:col-span-5">
           <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-2xl relative">
             <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">SOLUTIONS CONVERSATION</span>
-            <h2 class="text-2xl font-extrabold text-white mb-2">SCHEDULE YOUR DEMO</h2>
+            <h2 class="text-2xl font-extrabold text-white mb-2">ASK YOUR QUESTIONS</h2>
             <p class="text-xs text-slate-400 mb-6 leading-relaxed">
-              A walkthrough focused on Dynamics 365 Finance & Operations — implementation, Dynamics AX 2012 upgrade, integration, or getting more from what you already run.
+              Not a product demo. We assess the limitations in your Dynamics AX 2012 or Dynamics 365 Finance & Operations environment, where value is stuck, and how to get more from the platform while reducing opportunity cost.
             </p>
 
             <form id="demoLeadForm" class="space-y-4" novalidate>
@@ -217,7 +216,7 @@ const industries = [
                 type="submit"
                 class="w-full bg-[#f06a31] hover:bg-[#d55317] text-white font-extrabold text-sm py-3.5 px-6 rounded-xl shadow-lg transition-all tracking-wider uppercase disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                REQUEST DEMO NOW
+                ASK YOUR QUESTIONS
               </button>
             </form>
             <script define:vars={{ DEMO_FORM_ENDPOINT }}>
@@ -240,7 +239,7 @@ const industries = [
                   if (!form.reportValidity()) return;
 
                   if (!endpoint) {
-                    setStatus('Demo requests are not connected yet. Email contact@improved365.com directly and we will set up a time.', 'err');
+                    setStatus('Form is not connected yet. Email contact@improved365.com directly and we will set up a time.', 'err');
                     return;
                   }
 
@@ -267,7 +266,7 @@ const industries = [
                       if (!res.ok && res.type !== 'opaque') {
                         throw new Error('Request failed');
                       }
-                      setStatus('Thank you. An Improved365 solutions architect will reach out shortly.', 'ok');
+                      setStatus('Thank you. An Improved365 solutions architect will reach out to continue the conversation.', 'ok');
                       form.reset();
                     })
                     .catch(function () {
@@ -321,7 +320,7 @@ const industries = [
           DYNAMICS 365 FINANCE & OPERATIONS + AX 2012
         </h2>
         <p class="text-slate-600 text-base mt-4">
-          Technical depth where it matters — Dynamics 365 Finance & Operations, Dynamics AX 2012 upgrades, integration, data, and cloud operations. Not CRM.
+          Technical depth where it matters — Dynamics 365 Finance & Operations, Dynamics AX 2012 upgrades, integration, data, and cloud operations.
         </p>
       </div>
 
@@ -363,20 +362,20 @@ const industries = [
     </div>
   </section>
 
-  <section id="demo-agenda" class="py-20 bg-slate-900 text-white border-b border-slate-800">
+  <section id="conversation" class="py-20 bg-slate-900 text-white border-b border-slate-800">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-blue-400 font-bold text-xs tracking-widest uppercase block mb-2">DEMO AGENDA</span>
+        <span class="text-blue-400 font-bold text-xs tracking-widest uppercase block mb-2">THE CONVERSATION</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-white">
-          WHAT YOUR DEMO SESSION INCLUDES
+          WHAT WE WORK THROUGH TOGETHER
         </h2>
         <p class="text-slate-400 text-base mt-4">
-          A practical session led by an Improved365 solutions architect — focused on Dynamics 365 Finance & Operations and Dynamics AX 2012 upgrades.
+          Not a product demo. A practical session to surface limitations, opportunity cost, and how to get more from Dynamics 365 Finance & Operations — including Dynamics AX 2012 upgrades when that is the path.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {demoAgendaItems.map((item, idx) => (
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {conversationItems.map((item, idx) => (
           <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all flex flex-col justify-between">
             <div>
               <span class="text-xs font-bold text-blue-400 bg-blue-950 px-2.5 py-1 rounded-md mb-4 inline-block">0{idx + 1}</span>
@@ -480,13 +479,13 @@ const industries = [
         READY TO GET MORE FROM DYNAMICS 365 FINANCE & OPERATIONS?
       </h2>
       <p class="text-blue-100 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-        Talk with an Improved365 solutions architect about Dynamics 365 Finance & Operations implementation, a Dynamics AX 2012 upgrade, integration, or optimization.
+        Ask your questions. We assess limitations in your current setup and how to reduce opportunity cost — Dynamics 365 Finance & Operations implementation, AX 2012 upgrade, integration, or optimization.
       </p>
       <a
         href="#demo-form"
         class="inline-flex items-center bg-slate-950 text-white hover:bg-slate-900 font-bold text-sm px-8 py-4 rounded-xl shadow-lg transition-all gap-2"
       >
-        <span>SCHEDULE YOUR DEMO</span>
+        <span>ASK YOUR QUESTIONS</span>
       </a>
     </div>
   </section>
