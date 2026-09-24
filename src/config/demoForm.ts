@@ -4,6 +4,6 @@
  *
  * Leave empty until deployed — the form will show a clear setup error instead of a fake success.
  */
-export const DEMO_FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbytZhv_oEeDeODqWlQ-iOxGH02QU8Rol2s6Qd2rzepYXl9iXxHNRlHLRgFYgqP0teOC/exec";
+export const DEMO_FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxtXxri-073gTxehDYCBT7rQqw0lkO_fMl1qdJWwABxFe-zwbjTS4_4W3_Suow9ztDW/exec";
 
 export const DEMO_NOTIFY_EMAIL = "contact@improved365.com";
