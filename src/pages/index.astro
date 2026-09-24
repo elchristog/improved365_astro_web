@@ -200,6 +200,10 @@ const industries = [
                 <input id="demo-email" name="email" type="email" required autocomplete="email" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
               </div>
               <div>
+                <label for="demo-phone" class="block text-xs font-medium text-slate-300 mb-1">Phone*</label>
+                <input id="demo-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
+              </div>
+              <div>
                 <label for="demo-company" class="block text-xs font-medium text-slate-300 mb-1">Company name*</label>
                 <input id="demo-company" name="company" type="text" required autocomplete="organization" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500" />
               </div>
@@ -244,6 +248,7 @@ const industries = [
                     firstName: form.firstName.value.trim(),
                     lastName: form.lastName.value.trim(),
                     email: form.email.value.trim(),
+                    phone: form.phone.value.trim(),
                     company: form.company.value.trim(),
                     jobTitle: form.jobTitle.value.trim(),
                     source: window.location.href
