@@ -25,7 +25,10 @@ export default defineConfig({
     drafts: true
   },
   integrations: [ sitemap({
-    // Keep legacy redirect shells out of the sitemap
-    filter: (page) => !Object.keys(legacyRedirects).some((slug) => page.includes(`/${slug}/`) || page.endsWith(`/${slug}`)),
+    // Keep legacy redirect shells and noindex pages out of the sitemap
+    filter: (page) =>
+      !Object.keys(legacyRedirects).some((slug) => page.includes(`/${slug}/`) || page.endsWith(`/${slug}`)) &&
+      !page.includes('/microsoft-dynamics-365-partner/') &&
+      !page.includes('/dynamics-gp-to-dynamics-365/'),
   }), mdx()],
 });
