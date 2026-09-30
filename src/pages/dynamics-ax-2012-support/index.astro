@@ -1,0 +1,66 @@
+---
+import ServiceLayout from "@/layouts/ServiceLayout.astro";
+
+const faqs = [
+  {
+    question: "Does Microsoft still support Dynamics AX 2012?",
+    answer: "No. According to Microsoft Lifecycle documentation, extended support for Dynamics AX 2012 R3 ended on January 10, 2023, and extended support for Dynamics AX 2009 SP1, AX 2012, and AX 2012 R2 ended on April 12, 2022. Microsoft no longer provides security hotfixes for these versions."
+  },
+  {
+    question: "Can we keep running Dynamics AX 2012 and still get support?",
+    answer: "Yes. Many organizations still run Dynamics AX 2012 in production. Improved365 supports the environment you have today — troubleshooting, customizations, batch jobs, integrations, reporting, and performance — while you decide when to move to Dynamics 365 Finance & Operations."
+  },
+  {
+    question: "Do we have to upgrade to Dynamics 365 Finance & Operations right away?",
+    answer: "No. Support keeps the current system stable and the business running. When the cost of staying outweighs the cost of moving, Improved365 plans and delivers the upgrade from Dynamics AX 2012 to Dynamics 365 Finance & Operations."
+  },
+  {
+    question: "What does AX 2012 support include?",
+    answer: "Functional and technical issue resolution, X++ customization fixes and enhancements, batch and integration troubleshooting, SSRS and reporting work, SQL Server performance review, and a written assessment of risk and opportunity cost of staying on AX 2012."
+  },
+  {
+    question: "Is the first conversation a product demo?",
+    answer: "No. We assess the limitations of your current Dynamics AX 2012 environment, where value and time are being lost, and the opportunity cost of staying put versus moving to Dynamics 365 Finance & Operations."
+  }
+];
+---
+
+<ServiceLayout
+  title="Dynamics AX 2012 Support | Keep AX 2012 Running, Upgrade to D365 F&O | Improved365"
+  description="Dynamics AX 2012 support after Microsoft end of support. Keep AX 2012 stable today and upgrade to Dynamics 365 Finance & Operations when you are ready."
+  canonical="https://improved365.com/dynamics-ax-2012-support/"
+  badge="DYNAMICS AX 2012 SUPPORT"
+  h1="DYNAMICS AX 2012 SUPPORT — AND THE PATH TO DYNAMICS 365 FINANCE & OPERATIONS"
+  intro="Microsoft has ended support for Dynamics AX 2012, but many organizations still run their finance and supply chain on it. Improved365 keeps your Dynamics AX 2012 environment working today and plans the upgrade to Dynamics 365 Finance & Operations on your timeline."
+  bullets={[
+    "Support for Dynamics AX 2012 and AX 2012 R2 / R3 in production",
+    "X++ customization fixes, batch jobs, integrations, SSRS reports",
+    "Risk and opportunity-cost assessment of staying on AX 2012",
+    "Upgrade experts from Dynamics AX 2012 to Dynamics 365 Finance & Operations when you are ready"
+  ]}
+  sections={[
+    {
+      title: "Where Microsoft support stands",
+      body: "Per Microsoft Lifecycle documentation, extended support for Dynamics AX 2012 R3 ended on January 10, 2023, and for AX 2009 SP1, AX 2012, and AX 2012 R2 on April 12, 2022. There are no more Microsoft security hotfixes for these versions, so the responsibility for keeping the system stable moves to you and your partner."
+    },
+    {
+      title: "Why companies still run AX 2012",
+      body: "It works, it is customized to the business, and a full move to Dynamics 365 Finance & Operations is a real project with a budget and a timeline. Staying is a legitimate decision — as long as someone can fix issues, protect the environment, and tell you honestly what staying costs."
+    },
+    {
+      title: "What we support on Dynamics AX 2012",
+      body: "Issue resolution across finance and supply chain, X++ customizations and ISV layers, batch jobs and integrations, SSRS and custom reporting, SQL Server performance, and environment health — by people with 20+ years across Dynamics AX 2012 and Dynamics 365 Finance & Operations."
+    },
+    {
+      title: "Support now, upgrade when it pays",
+      body: "We quantify the opportunity cost of staying on AX 2012: manual workarounds, slow close, integration limits, hiring risk, and exposure. When moving to Dynamics 365 Finance & Operations makes financial sense, the same team plans and runs the upgrade."
+    }
+  ]}
+  faqs={faqs}
+  related={[
+    { href: "/ax-2012-to-dynamics-365/", label: "AX 2012 → D365 F&O Upgrade" },
+    { href: "/dynamics-365-consultant/", label: "D365 F&O Consulting" },
+    { href: "/dynamics-365-implementation-cost/", label: "Implementation Cost" },
+    { href: "/erp-modernization/", label: "ERP Modernization" }
+  ]}
+/>
