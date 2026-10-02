@@ -54,6 +54,17 @@ jobs:
             --cache-control="no-cache, max-age=0" \
             --content-type="text/html; charset=utf-8"
 
+      - name: Force no-cache on every HTML object (CDN revalidation)
+        continue-on-error: true
+        run: |
+          gcloud storage objects update "gs://improved365.com/**/*.html" \
+            --cache-control="no-cache, max-age=0" \
+            --content-type="text/html; charset=utf-8" || echo "wildcard update skipped"
+          gcloud storage objects update gs://improved365.com/index.html \
+            --cache-control="no-cache, max-age=0" \
+            --content-type="text/html; charset=utf-8"
+          echo "HTML cache-control forced"
+
       - name: Verify bucket homepage after upload
         run: |
           gcloud storage cat gs://improved365.com/index.html | grep -q "UPGRADE EXPERTS FROM DYNAMICS AX 2012"
