@@ -2,21 +2,11 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const posts = await getCollection('posts');
+  const posts: { title: string; description: string; pubDate: Date; link: string }[] = [];
   return rss({
-    title: 'Lexington Themes',
-    description: 'Free and premium multipage themes and UI Kits For freelancers, developers, businesses, and personal use.Beautifully crafted with Astro.js, and Tailwind CSS — Simple & easy to customise.',
+    title: 'Improved365 — Microsoft Dynamics 365 Finance & Operations',
+    description: 'Helping businesses get more from Microsoft Dynamics 365 Finance & Operations. Upgrade experts from Dynamics AX 2012 to D365 F&O — implement, customize, integrate, optimize, and support.',
     site: context.site,
     items: posts
-      .sort(
-        (a, b) =>
-          new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
-      )
-      .map((post) => ({
-        title: post.data.title,
-        description: post.data.description,
-        pubDate: new Date(post.data.pubDate),
-        link: `/blog/posts/${post.id}/`,
-      })),
   });
 }
