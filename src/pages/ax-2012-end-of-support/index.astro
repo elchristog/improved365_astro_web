@@ -1,0 +1,73 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const faqs = [
+  {
+    question: "Is Dynamics AX 2012 still supported by Microsoft?",
+    answer: "No. Per Microsoft Lifecycle documentation, extended support for Dynamics AX 2012 R3 ended on January 10, 2023, and for AX 2009 SP1, AX 2012, and AX 2012 R2 on April 12, 2022. There are no more security hotfixes for these versions.",
+  },
+  {
+    question: "What happens now that AX 2012 support has ended?",
+    answer: "Security risk grows every month — no hotfixes, aging SQL Server and Windows versions, and a shrinking talent pool. Operations continue, but the burden of stability, compliance exposure, and integration limits shifts to your team or partner. Many organizations run supported on AX 2012 with third-party support while planning the upgrade path.",
+  },
+  {
+    question: "What are the realistic paths off AX 2012?",
+    answer: "Three practical paths: (1) upgrade to Dynamics 365 Finance & Operations — the supported cloud successor, (2) stay on AX 2012 with third-party support while you build the business case, or (3) lift-and-shift to Azure IaaS, which solves infrastructure risk but not the ERP gap. For most mid-market finance and supply chain operations, the D365 F&O upgrade is the durable path.",
+  },
+  {
+    question: "How long does an AX 2012 to D365 F&O upgrade take?",
+    answer: "With pre-configured financial workflows and a rehearsed data migration, core financial modules can go live in as few as 6 months, depending on customization volume and integrations. The critical path is customization triage and data migration — not licensing.",
+  },
+  {
+    question: "What does AX 2012 end of support mean for compliance and audit?",
+    answer: "Auditors increasingly ask about unpatched ERP systems. With no security hotfixes, segregation-of-duties and audit-trail gaps compound over time. A documented third-party support arrangement plus a funded upgrade roadmap is what most auditors expect to see.",
+  },
+];
+---
+
+<BaseLayout
+  title="AX 2012 End of Support: What It Means and Your Paths Forward | Improved365"
+  description="Microsoft ended AX 2012 extended support (R3 in Jan 2023; AX 2012/R2 in Apr 2022). What it means for security, compliance, and operations — and three realistic paths forward, including the AX 2012 to Dynamics 365 Finance & Operations upgrade."
+  canonical="https://improved365.com/ax-2012-end-of-support/"
+  type="article"
+  faqs={faqs}
+  datePublished="2026-11-01"
+>
+  <article class="max-w-3xl mx-auto px-4 py-24">
+    <p class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">AX 2012 END-OF-SUPPORT GUIDE</p>
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-6">AX 2012 End of Support: What It Means and Your Paths Forward</h1>
+
+    <p class="text-lg text-slate-600 mb-4">Microsoft has ended support for Dynamics AX 2012. Extended support for AX 2012 R3 ended <strong>January 10, 2023</strong>; for AX 2009 SP1, AX 2012, and AX 2012 R2 it ended <strong>April 12, 2022</strong> (per Microsoft Lifecycle documentation). If you run finance or supply chain on AX 2012 today, the system still works — but security hotfixes have stopped, and the risk profile changes every month.</p>
+
+    <p class="text-lg text-slate-600 mb-8">This guide explains what end of support actually means operationally, what it costs to stay, and the three realistic paths forward — including the upgrade to <a class="text-blue-600 underline" href="/ax-2012-to-dynamics-365/">Dynamics 365 Finance & Operations</a>.</p>
+
+    <h2 class="text-2xl font-bold text-slate-900 mt-12 mb-4">What end of support actually means</h2>
+    <p class="text-slate-600 mb-4">End of support does not mean the system stops. It means Microsoft stops shipping security hotfixes, and the responsibility for stability, compliance, and integration health shifts to whoever runs the environment. In practice, organizations on AX 2012 see:</p>
+    <ul class="list-disc pl-6 text-slate-600 mb-8 space-y-2">
+      <li>No security hotfixes — known vulnerabilities stay unpatched.</li>
+      <li>Aging SQL Server and Windows versions underneath AX 2012, also past or approaching end of support.</li>
+      <li>A shrinking pool of developers who know X++ and the AX 2012 codebase.</li>
+      <li>Integration risk — point-to-point custom integrations harden around the old system.</li>
+      <li>Audit exposure — auditors increasingly ask about unpatched ERP systems.</li>
+    </ul>
+
+    <h2 class="text-2xl font-bold text-slate-900 mt-12 mb-4">The cost of staying</h2>
+    <p class="text-slate-600 mb-4">Staying on AX 2012 is a legitimate business decision — as long as it is a decision, not a default. The real cost of staying is opportunity cost: manual workarounds, slow month-end close, integration limits, hiring risk, and growing exposure. Our <a class="text-blue-600 underline" href="/dynamics-365-implementation-cost/">implementation cost guide</a> breaks down the upgrade investment side.</p>
+    <p class="text-slate-600 mb-8">The counterfactual — what staying actually costs — is what most teams miss. Manual reconciliations, spreadsheet fixes, and delayed decisions compound: benchmark data shows 68% of finance teams waste 11+ hours weekly on manual spreadsheet work, and 91% need 4+ days to close the month.</p>
+    <p class="text-slate-600 mb-8">When staying costs more than moving, the <a class="text-blue-200 underline" href="/ax-2012-to-dynamics-365/">AX 2012 → D365 F&O upgrade</a> is the durable path.</p>
+    <h2 class="text-2xl font-bold text-slate-900 mt-12 mb-4">Your three paths forward</h2>
+    <p class="text-slate-600 mb-4">Three realistic options exist once Microsoft support has ended:</p>
+    <ul class="list-disc pl-6 text-slate-600 mb-8 space-y-2">
+      <li><strong>Upgrade to Dynamics 365 Finance & Operations</strong> — the supported cloud successor for finance and supply chain. <a class="text-blue-600 underline" href="/ax-2012-to-dynamics-365/">Upgrade path detail</a>.</li>
+      <li><strong>Stay with third-party support</strong> — keeps the current system stable while you build the business case. <a class="text-blue-600 underline" href="/dynamics-ax-2012-support/">AX 2012 support service</a>.</li>
+      <li><strong>Lift-and-shift to Azure IaaS</strong> — solves infrastructure risk, not the ERP gap. Useful as a bridge, rarely as a destination.</li>
+    </ul>
+
+    <h2 class="text-2xl keyword font-bold text-slate-900 mt-12 mb-4">When does the upgrade make financial sense?</h2>
+    <p class="text-slate-600 mb-8">When the opportunity cost of staying — manual workarounds, slow close, integration limits, hiring risk — exceeds the cost of the upgrade. Our <a class="text-blue-600 underline" href="/dynamics-ax-2012-support/">AX 2012 support service</a> includes a written assessment of exactly that: risk and opportunity cost of staying vs moving. If the numbers say stay, we say stay; if they say move, we plan and deliver the upgrade.</p>
+
+    <h2 class="text-2xl font-bold text-slate-900 mt-12 mb-4">Next step</h2>
+    <p class="text-slate-600 mb-4">Ask your questions. We assess the limitations in your current Dynamics AX 2012 environment, where value is stuck, and how to get more from the platform while reducing opportunity cost — whether that is staying supported or upgrading to Dynamics 365 Finance & Operations.</p>
+    <a href="/#demo-form" class="inline-flex bg-blue-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-blue-700 transition-all">Ask your questions</a>
+  </article>
+</BaseLayout>
