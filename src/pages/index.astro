@@ -267,6 +267,14 @@ const industries = [
                       if (!res.ok && res.type !== 'opaque') {
                         throw new Error('Request failed');
                       }
+                      if (typeof window.gtag === 'function') {
+                        window.gtag('event', 'generate_lead', {
+                          form_id: 'demoLeadForm',
+                          form_name: 'ask_your_questions',
+                          lead_source: 'website_form',
+                          page_location: window.location.href
+                        });
+                      }
                       setStatus('Thank you. An Improved365 solutions architect will reach out to continue the conversation.', 'ok');
                       form.reset();
                     })
