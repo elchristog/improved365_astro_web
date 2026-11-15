@@ -24,6 +24,7 @@ const footerLinks = [
     title: "Company & Contact",
     links: [
       { href: "mailto:contact@improved365.com", label: "contact@improved365.com", isEmail: true },
+      { href: "https://www.linkedin.com/company/improved365/", label: "LinkedIn", external: true },
       { href: "/#demo-form", label: "Ask your questions" },
       { href: "/", label: "Home" },
     ],
@@ -57,6 +58,7 @@ const footerLinks = [
               <li>
                 <a
                   href={link.href}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer me" } : {})}
                   class="text-slate-400 hover:text-blue-300 transition-colors"
                 >
                   {link.label}
